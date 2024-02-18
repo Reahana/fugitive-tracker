@@ -1,0 +1,104 @@
+  /* red :#ff0000 !important; @@@@
+  light bliue 3FB4F9
+  dark blue 629FC4
+  middle blue 54ABDF @@@@@
+  yellow F9DD68 @@@@
+  
+  ms-md-5 ps-md-5 pe-3
+  */
+/* ========common sections ======*/
+
+  /* menu section */
+  nav{border-bottom: 1px solid;}
+  .menu-bar{background-color: white !important;}
+  
+.menu{
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+.menu:first-child{padding-left: 160px !important;}
+.menu:last-child{padding-left: 150px !important;}
+.menu a{color:#54ABDF !important;}
+.menu a:hover{
+  color: black!important;
+  text-decoration: underline;
+}
+.menu:last-child a:hover{
+  text-decoration: none;
+  color: white !important;
+}
+.login-btn{
+border: 2px solid #54ABDF !important;
+border-radius: 8px;
+color:#54ABDF !important;
+}
+.login-btn:hover {
+  background-color: #54ABDF;
+  color: white !important;
+}
+.active-link{font-weight: 600 !important;}
+
+/* Footer section */
+
+footer{
+  font-size: 20px;
+  background-color: #ffffff;
+}
+footer a{
+  text-decoration: none;
+  color: crimson
+}
+footer a:hover{text-decoration: underline;}
+
+/* ===== home page ====== */
+
+/* bannar */
+
+.bannar{
+  background: url('../image/banner.jpg') no-repeat ;
+  background-position: center;
+  min-height: 90vh;
+  background-size: cover;
+}
+
+
+
+/* goto section */
+
+.goto{
+  background-color:#fffef4 ;
+  min-height: 70vh;
+}
+.goto .title{
+text-align: center;
+font-weight: 700;
+padding-bottom: 40px;
+padding-top: 20px;
+font-size: 50px;
+}
+.goto button{
+  font-size: 25px;
+}
+.goto  a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 25px;
+}
+
+
+/* Article section */
+
+.article{background-color:#00000084;}
+.article .title{
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  padding: 10px 0 20px 0;
+  }
+
+
+/* ==== check page =====  */
+.check-status , .solve-page, .law-list , .fine-page{
+  background-color: #f9f9f9;
+  min-height: 76vh;
+}
