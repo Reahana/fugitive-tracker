@@ -1,5 +1,8 @@
 <footer class="page-footer">
-    <div class="font-13">2024 © <b>Fugitive Tracker</b> - All rights reserved.</div>
-    <a class="px-4" href="http://themeforest.net/item/adminca-responsive-bootstrap-4-3-angular-4-admin-dashboard-template/20912589" target="_blank">BUY PREMIUM</a>
+    <div class="float-start font-13">2024 © <b>Fugitive Tracker</b> - All rights reserved.</div>
+    <div class="float-end ">
+        Design & Developed By<a class="px-4" href="https://reahanagomes.com/" style="color: crimson" target="_blank">Amanada Reahana Gomes</a>
+    </div>
+
     <div class="to-top"><i class="fa fa-angle-double-up"></i></div>
 </footer>
