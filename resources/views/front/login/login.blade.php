@@ -101,7 +101,7 @@
         ::placeholder{
             color: #e5e5e5;
         }
-        button{
+        .login-btn{
             margin-top: 50px;
             width: 100%;
             background-color: #ffffff;
@@ -112,7 +112,7 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        button a{
+        .login-btn a{
             color: #080710;
             text-decoration: none;
         }
@@ -121,16 +121,16 @@
             margin-top: 30px;
             display: flex;
         }
-        .social div{
+        .social button{
             background: red;
             width: 100% ;
             border-radius: 3px;
-            padding: 5px 10px 10px 5px;
+            padding: 10px 10px 10px 5px;
             background-color: rgba(255,255,255,0.27);
             color: #eaf0fb;
             text-align: center;
         }
-        .social div:hover{
+        .social button:hover{
             background-color: rgba(255,255,255,0.47);
         }
 
@@ -158,10 +158,10 @@
     <label for="password">Password</label>
     <input type="password" placeholder="Password" id="password">
 
-    <button><a  href={{route('officers-dashboard')}}>Log In</a></button>
+    <button class="login-btn"><a  href={{route('officers-dashboard')}}>Log In</a></button>
 
     <div class="social">
-        <div class="go"><a href={{route('/')}}><i class="fa-solid fa-arrow-left"></i>Back</a> </div>
+        <button class="go"><a href={{route('/')}}><i class="fa-solid fa-arrow-left"></i>Back</a> </button>
         <!-- <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>  -->
     </div>
 </form>

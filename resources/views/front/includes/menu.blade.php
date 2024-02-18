@@ -9,19 +9,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="fs-4 navbar-nav me-auto  mb-2 mb-lg-0">
                 <li class="nav-item menu ">
-                    <a class="nav-link active-link" aria-current="page" href={{route('/')}}>Home</a>
+                    <a class="nav-link {{ request()->is('/') ? 'active-link' : ''}}" aria-current="page" href={{route('/')}}>Home</a>
                 </li>
                 <li class="nav-item menu ">
-                    <a class="nav-link  red" href={{route('law-list')}}>Law List</a>
+                    <a class="nav-link {{ request()->is('law-list') ? 'active-link' : ''}}" href={{route('law-list')}}>Law List</a>
                 </li>
                 <li class="nav-item menu">
-                    <a class="nav-link red" href={{route('amount-of-fine')}}>Amount of Fine</a>
+                    <a class="nav-link {{ request()->is('amount-of-fine') ? 'active-link' : ''}}" href={{route('amount-of-fine')}}>Amount of Fine</a>
                 </li>
                 <li class="nav-item menu">
-                    <a class="nav-link red" href={{route('how-to-solve')}}>How to Solve</a>
+                    <a class="nav-link {{ request()->is('how-to-solve') ? 'active-link' : ''}}" href={{route('how-to-solve')}}>How to Solve</a>
                 </li>
                 <li class="nav-item  menu">
-                    <a class="nav-link red" href={{route('check-status')}}>Check My Status </a>
+                    <a class="nav-link {{ request()->is('check-status') ? 'active-link' : ''}}" href={{route('check-status')}}>Check My Status </a>
                 </li>
                 <li class="nav-item  menu ">
                     <a class="nav-link login-btn" href={{route('officer-login')}} ><i class="fa-solid fa-user "></i> Log in</a>
