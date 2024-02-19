@@ -11,7 +11,7 @@
     <meta content="Coderthemes" name="author" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('/')}}admin/assets/images/favicon.ico">
+    <link rel="shortcut icon" href="{{asset('/')}}image/favicon.ico">
 
     <!-- Theme Config Js -->
     <script src="{{asset('/')}}admin/assets/js/hyper-config.js"></script>
@@ -33,7 +33,8 @@
                     <!-- Logo -->
                     <div class="card-header pt-4 pb-4 text-center bg-primary">
                         <a href="">
-                            <span><img src="{{asset('/')}}admin/assets/images/logo.png" alt="logo" height="22"></span>
+                            {{--<span><img src="{{asset('/')}}image/logo.png" alt="logo" height="40"></span>--}}
+                        <span class="text-white font-21"> Fugitive Tracker </span>
                         </a>
                     </div>
 
