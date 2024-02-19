@@ -9,6 +9,8 @@
 <!-- THEME STYLES-->
 <link href="assets/css/main.min.css" rel="stylesheet" />
 
+<link rel="stylesheet" href="{{asset('/')}}assets/css/style.css">
+
 <style>
     .visitors-table tbody tr td:last-child {
         display: flex;

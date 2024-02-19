@@ -19,7 +19,7 @@
                     <span class="nav-label">New Registration</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a href="colors.html">Add</a>
+                        <a href="{{route('add-new-nid')}}">Add</a>
                     </li>
                     <li>
                         <a href="typography.html">Edit</a>
@@ -28,7 +28,7 @@
                 </ul>
             </li>
             <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-edit"></i>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-handcuffs"></i>
                     <span class="nav-label">File Case</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
@@ -41,7 +41,7 @@
                 </ul>
             </li>
             <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-table"></i>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-square-xmark"></i>
                     <span class="nav-label">Dismiss</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>

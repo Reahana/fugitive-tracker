@@ -12,23 +12,23 @@
     <h1 class="title "> <i class="fa-solid fa-angles-left"></i> Go To <i class="fa-solid fa-angles-right"></i> </h1>
     <div class=" row g-4">
         <div class="col-md-6 d-grid ">
-            <a href={{route('law-list')}} class="btn btn-secondary btn-lg py-3 "  data-toggle="tooltip" data-placement="bottom" title="list of law">
+            <a href="{{route('law-list')}}" class=" btn btn-secondary btn-lg py-3 "  data-toggle="tooltip" data-placement="bottom" title="list of law">
                 Law List <i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>
         <div class="col-md-6 d-grid ">
-            <a href="./fine.html" class="btn btn-danger btn-lg py-3" data-toggle="tooltip" data-placement="bottom" title="Amount of fine">
+            <a href="{{route('amount-of-fine')}}" class="btn btn-danger btn-lg py-3" data-toggle="tooltip" data-placement="bottom" title="Amount of fine">
                 Amount of Fine <i class="fa-solid fa-arrow-right"></i>
             </a>
 
         </div>
         <div class="col-md-6 d-grid">
-            <a href="./solve.html" class="btn btn-success btn-lg py-3" data-toggle="tooltip" data-placement="bottom" title="See how can you solve your case">
+            <a href="{{route('how-to-solve')}}" class="btn btn-success btn-lg py-3" data-toggle="tooltip" data-placement="bottom" title="See how can you solve your case">
                 How to Solve  <i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>
         <div class="col-md-6 d-grid">
-            <a href="./check.html" class="btn btn-primary btn-lg py-3"  data-toggle="tooltip" data-placement="bottom" title="Check the status if you have any cases or not">
+            <a href="{{route('check-status')}}" class="btn btn-primary btn-lg py-3"  data-toggle="tooltip" data-placement="bottom" title="Check the status if you have any cases or not">
                 Check My Status <i class="fa-solid fa-arrow-right"></i>
             </a>
 

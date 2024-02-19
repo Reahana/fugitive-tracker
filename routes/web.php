@@ -63,6 +63,11 @@ Route::get('/officers-dashboard',[
     'as'        => 'officers-dashboard'
 ]);
 
+Route::get('/add-new-nid',[
+    'uses' => 'App\Http\Controllers\NewNIDRegisterController@index',
+    'as'        => 'add-new-nid'
+]);
+
 //Route::get('/', [HomeController::class, 'index']);
 Route::get('/post/add', [PostController::class, 'index'])->name('post.add')->middleware('roles');
 Route::post('/post/new', [PostController::class, 'create'])->name('post.new');
