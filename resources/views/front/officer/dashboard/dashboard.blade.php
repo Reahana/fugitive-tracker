@@ -4,5 +4,5 @@
     Officers Dashboard |
     @endsection
 @section('body')
-    12klljakolkid
+   dashboard
 @endsection
