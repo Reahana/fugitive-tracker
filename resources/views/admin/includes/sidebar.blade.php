@@ -78,16 +78,16 @@
                 <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail"
                    class="side-nav-link">
                     <i class="uil-envelope"></i>
-                    <span> News Setting </span>
+                    <span> Citizen </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarEmail">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="apps-email-inbox.html">Manage Category</a>
+                            <a href="{{route('add-nid')}}">Add NID</a>
                         </li>
                         <li>
-                            <a href="apps-email-read.html">Manage Sub Category</a>
+                            <a href="apps-email-read.html">Manage NID</a>
                         </li>
                     </ul>
                 </div>

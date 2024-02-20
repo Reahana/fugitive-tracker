@@ -31,10 +31,10 @@
                 <div class="card">
 
                     <!-- Logo -->
-                    <div class="card-header pt-4 pb-4 text-center bg-primary">
+                    <div class="card-header pt-3 pb-3 text-center bg-primary">
                         <a href="">
                             {{--<span><img src="{{asset('/')}}image/logo.png" alt="logo" height="40"></span>--}}
-                        <span class="text-white font-21"> Fugitive Tracker </span>
+                        <span class="text-white font-36"> Fugitive Tracker </span>
                         </a>
                     </div>
 

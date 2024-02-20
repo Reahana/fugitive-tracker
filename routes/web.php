@@ -67,6 +67,10 @@ Route::get('/add-new-nid',[
     'uses' => 'App\Http\Controllers\NewNIDRegisterController@index',
     'as'        => 'add-new-nid'
 ]);
+Route::get('/add-nid',[
+    'uses' => 'App\Http\Controllers\CitizenController@index',
+    'as'        => 'add-nid'
+]);
 
 //Route::get('/', [HomeController::class, 'index']);
 Route::get('/post/add', [PostController::class, 'index'])->name('post.add')->middleware('roles');
