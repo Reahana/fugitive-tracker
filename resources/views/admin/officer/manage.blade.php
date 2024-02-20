@@ -39,7 +39,7 @@
                                 {{--<a href="{{route('user.delete', ['id' => $user->id])}}" class="btn btn-danger btn-sm {{$user->id == 1 ? 'disabled' : ''}}" title="Delete" onclick="return confirm('Ary you sure to delete this..');">--}}
                                 {{--<i class="ri-chat-delete-fill"></i>--}}
                                 {{--</a>--}}
-                                <a href="" class="btn btn-success btn-sm" title="Edit">
+                                <a href="{{route('edit-officer')}}" class="btn btn-success btn-sm" title="Edit">
                                     <i class="ri-edit-box-fill"></i>
                                 </a>
                                 <a href="" class="btn btn-danger btn-sm " title="Delete" onclick="return confirm('Ary you sure to delete this..');">
