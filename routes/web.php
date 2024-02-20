@@ -86,6 +86,11 @@ Route::get('manage-officer',[
     'as'        =>'manage-officer'
 ]);
 
+Route::get('/edit-officer',[
+    'uses' => 'App\Http\Controllers\OfficerController@edit',
+    'as'        => 'edit-officer'
+]);
+
 //Route::get('/', [HomeController::class, 'index']);
 Route::get('/post/add', [PostController::class, 'index'])->name('post.add')->middleware('roles');
 Route::post('/post/new', [PostController::class, 'create'])->name('post.new');
