@@ -10,4 +10,9 @@ class CitizenController extends Controller
     {
         return view('admin.citizen.add');
     }
+
+    public  function  manage ()
+    {
+        return view('admin.citizen.manage');
+    }
 }

@@ -77,7 +77,8 @@
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail"
                    class="side-nav-link">
-                    <i class="uil-envelope"></i>
+                    <i class="fa-solid fa-users"></i>
+
                     <span> Citizen </span>
                     <span class="menu-arrow"></span>
                 </a>
@@ -87,7 +88,7 @@
                             <a href="{{route('add-nid')}}">Add NID</a>
                         </li>
                         <li>
-                            <a href="apps-email-read.html">Manage NID</a>
+                            <a href="{{route('manage-nid')}}">Manage NID</a>
                         </li>
                     </ul>
                 </div>
@@ -96,25 +97,19 @@
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarProjects" aria-expanded="false"
                    aria-controls="sidebarProjects" class="side-nav-link">
-                    <i class="uil-briefcase"></i>
-                    <span> News Module </span>
+                    <i class="fa-solid fa-user-secret"></i>
+                    <span> Officer </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarProjects">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="apps-projects-list.html">List</a>
+                            <a href="{{route('add-officer')}}">Add Officer</a>
                         </li>
                         <li>
-                            <a href="apps-projects-details.html">Details</a>
+                            <a href="{{route('manage-officer')}}">Manage Officer</a>
                         </li>
-                        <li>
-                            <a href="apps-projects-gantt.html">Gantt <span
-                                        class="badge rounded-pill bg-light text-dark font-10 float-end">New</span></a>
-                        </li>
-                        <li>
-                            <a href="apps-projects-add.html">Create Project</a>
-                        </li>
+
                     </ul>
                 </div>
             </li>

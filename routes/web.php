@@ -63,13 +63,23 @@ Route::get('/officers-dashboard',[
     'as'        => 'officers-dashboard'
 ]);
 
-Route::get('/add-new-nid',[
-    'uses' => 'App\Http\Controllers\NewNIDRegisterController@index',
-    'as'        => 'add-new-nid'
-]);
 Route::get('/add-nid',[
     'uses' => 'App\Http\Controllers\CitizenController@index',
     'as'        => 'add-nid'
+]);
+Route::get('/manage-nid',[
+    'uses' => 'App\Http\Controllers\CitizenController@manage',
+    'as'        => 'manage-nid'
+]);
+
+Route::get('/add-officer',[
+    'uses' => 'App\Http\Controllers\OfficerController@index',
+    'as'        => 'add-officer'
+]);
+
+Route::get('manage-officer',[
+    'uses' => 'App\Http\Controllers\OfficerController@manage',
+    'as'        =>'manage-officer'
 ]);
 
 //Route::get('/', [HomeController::class, 'index']);
