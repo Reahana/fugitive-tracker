@@ -51,7 +51,7 @@
 
                         <div class="justify-content-end row">
                             <div class="col-9">
-                                <button type="submit" class="btn btn-success">Update NID Info</button>
+                                <button type="submit" class="btn btn-success">Update Officer Info</button>
                             </div>
                         </div>
                     </form>
