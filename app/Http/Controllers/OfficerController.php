@@ -13,6 +13,12 @@ class OfficerController extends Controller
 
     public function manage()
     {
-        return view ('admin.officer.manage');
+        return view('admin.officer.manage');
+
+    }
+
+    public function edit()
+    {
+        return view('admin.officer.edit');
     }
 }

@@ -71,6 +71,10 @@ Route::get('/manage-nid',[
     'uses' => 'App\Http\Controllers\CitizenController@manage',
     'as'        => 'manage-nid'
 ]);
+Route::get('/edit-nid',[
+    'uses' => 'App\Http\Controllers\CitizenController@edit',
+    'as'        => 'edit-nid'
+]);
 
 Route::get('/add-officer',[
     'uses' => 'App\Http\Controllers\OfficerController@index',
