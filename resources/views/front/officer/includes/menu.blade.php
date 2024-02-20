@@ -15,20 +15,20 @@
             </li>
             <li class="heading">FEATURES</li>
             <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-bookmark"></i>
-                    <span class="nav-label">New Registration</span><i class="fa fa-angle-left arrow"></i></a>
+                <a href="javascript:;"><i class="sidebar-item-icon fa-solid fa-user"></i>
+                    <span class="nav-label">Profile</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a href="{{route('add-new-nid')}}">Add</a>
+                        <a href="">View</a>
                     </li>
                     <li>
-                        <a href="typography.html">Edit</a>
+                        <a href="">Edit</a>
                     </li>
 
                 </ul>
             </li>
             <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-handcuffs"></i>
+                <a href="javascript:;"><i class="sidebar-item-icon fa-solid fa-handcuffs"></i>
                     <span class="nav-label">File Case</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
@@ -41,7 +41,7 @@
                 </ul>
             </li>
             <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-square-xmark"></i>
+                <a href="javascript:;"><i class="sidebar-item-icon fa-regular fa-rectangle-xmark"></i>
                     <span class="nav-label">Dismiss</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>

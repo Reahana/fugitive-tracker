@@ -14,7 +14,7 @@
                         <div class="row mb-3">
                             <label for="inputEmail31" class="col-3 col-form-label">NID Number</label>
                             <div class="col-9">
-                                <input type="email" class="form-control" name="number" id="nid" placeholder="National Identification Number"/>
+                                <input type="email" class="form-control" name="nid" id="nid" placeholder="National Identification Number"/>
                             </div>
                         </div>
                         <div class="row mb-3">
