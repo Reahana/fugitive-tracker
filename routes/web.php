@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 //tracker controllers
 use App\Http\Controllers\TrackerController;
 use App\Http\Controllers\LawListController;
+use App\Http\Controllers\CitizenController;
 
 use App\Models\RoleRoute;
 
@@ -63,35 +64,7 @@ Route::get('/officers-dashboard',[
     'as'        => 'officers-dashboard'
 ]);
 
-Route::get('/add-nid',[
-    'uses' => 'App\Http\Controllers\CitizenController@index',
-    'as'        => 'add-nid'
-]);
-Route::post('/new-nid', [
-    'uses' => 'App\Http\Controllers\CitizenController@create',
-    'as'   => 'nid.new',
-//    'middleware' => ['auth:sanctum', 'verified','is_admin']
-]);
-Route::get('/manage-nid',[
-    'uses' => 'App\Http\Controllers\CitizenController@manage',
-    'as'        => 'manage-nid'
-]);
-Route::get('/edit-nid/{id}',[
-    'uses' => 'App\Http\Controllers\CitizenController@edit',
-    'as'        => 'edit-nid'
-]);
-Route::post('/update-nid/{id}', [
 
-    'uses' => 'App\Http\Controllers\CitizenController@update',
-    'as'   => 'nid.update',
-
-//    'middleware' => ['auth:sanctum', 'verified','is_admin']
-]);
-Route::post('delete-nid/{id}',[
-    'uses' => 'App\Http\Controllers\CitizenController@delete',
-    'as'   => 'nid.delete',
-//    'middleware' => ['auth:sanctum', 'verified','is_admin']
-]);
 
 Route::get('/add-officer',[
     'uses' => 'App\Http\Controllers\OfficerController@index',
@@ -133,4 +106,23 @@ Route::middleware([ 'auth:sanctum',  config('jetstream.auth_session'), 'verified
     Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
     Route::post('/user/update/{id}', [UserController::class, 'update'])->name('user.update');
     Route::get('/user/delete/{id}', [UserController::class, 'delete'])->name('user.delete');
+
+
+//    Route::get('/add-nid',[
+//        'uses' => 'App\Http\Controllers\CitizenController@index',
+//        'as'        => 'add-nid'
+//    ]);
+    Route::get('/add-nid',[CitizenController::class, 'index'])->name('add-nid');
+    Route::post('/new-nid', [CitizenController::class, 'create'])->name('nid.new');
+    Route::get('/manage-nid',[CitizenController::class, 'manage'])->name('manage-nid');
+    Route::get('/edit-nid/{id}',[CitizenController::class, 'edit'])->name('edit-nid');
+    Route::post('/update-nid/{id}', [CitizenController::class, 'update'])->name('nid.update');
+    Route::post('/delete-nid/{id}', [CitizenController::class, 'delete'])->name('nid.delete');
+
+
+
+
+
+
+
 });
