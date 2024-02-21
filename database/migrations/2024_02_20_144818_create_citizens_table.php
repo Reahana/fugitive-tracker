@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('nid');
             $table->string('name');
-            $table->date('dob')->nullable();
+            $table->date('dob');
             $table->text('image')->nullable();
             $table->timestamps();
         });

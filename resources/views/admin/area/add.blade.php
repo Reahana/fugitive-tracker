@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <h4 class="header-title">Add Area form</h4>
                     <p class="text-muted font-14">{{Session::get('message')}}</p>
-                    <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="{{route('area.new')}}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row mb-3">
@@ -18,7 +18,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="inputEmail3" class="col-3 col-form-label"> Area Name</label>
+                            <label for="inputEmail3" class="col-3 col-form-label">Area Name</label>
                             <div class="col-9">
                                 <input type="text" class="form-control" name="name" id="name" placeholder=" Area Name"/>
                             </div>
@@ -28,7 +28,7 @@
 
                         <div class="justify-content-end row">
                             <div class="col-9">
-                                <button type="submit" class="btn btn-info">Add New NID</button>
+                                <button type="submit" class="btn btn-info">Add New Area</button>
                             </div>
                         </div>
                     </form>

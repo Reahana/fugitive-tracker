@@ -27,7 +27,6 @@ public function  create(Request $request)
     {
         return view('admin.citizen.edit',['citizen' => Citizen::find($id) ]);
     }
-
     public function update(Request $request, $id)
     {
         Citizen::updateCitizen($request,$id);

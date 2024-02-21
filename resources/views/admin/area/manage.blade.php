@@ -5,7 +5,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="header-title">All Citizen Information</h4>
+                    <h4 class="header-title">All Area Information</h4>
                     <p class="text-muted font-14">{{Session::get('message')}}</p>
                     <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
                         <thead>
@@ -17,33 +17,27 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {{--@foreach($citizens as $citizen)--}}
+                        @foreach($areas as $area)
                             <tr>
-                                {{--<td>{{$loop->iteration}}</td>--}}
-                                {{--<td>{{$citizen->area}}</td>--}}
-                                {{--<td>{{$citizen->name}}</td>--}}
-                                <td>1</td>
-                                <td>1</td>
-                                <td>name</td>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{$area->area_no}}</td>
+                                <td>{{$area->name}}</td>
+
                                 <td>
-                                    {{--<a href="{{route('edit-nid', ['id' => $citizen->id])}}" class="btn btn-success btn-sm" title="Edit">--}}
-                                        {{--<i class="fa-solid fa-pen-to-square"></i>--}}
-                                    {{--</a>--}}
-                                    {{--<a href="" class="btn btn-danger btn-sm " onclick="event.preventDefault(); document.getElementById('citizenDeleteForm{{$citizen->id}}').submit();" title="Delete" >--}}
-                                        {{--<i class="fa-regular fa-trash-can"></i>--}}
-                                    {{--</a>--}}
-                                    {{--<form action="{{route('nid.delete', ['id' => $citizen->id])}}" method="POST" id="citizenDeleteForm{{$citizen->id}}">--}}
-                                        {{--@csrf--}}
-                                    {{--</form>--}}
-                                    <a href="" class="btn btn-success btn-sm" title="Edit">
+                                    <a href="{{route('edit-area', ['id' => $area->id])}}" class="btn btn-success btn-sm" title="Edit">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </a>
-                                    <a href="" class="btn btn-danger btn-sm "  title="Delete" >
+                                    <a href="" class="btn btn-danger btn-sm " onclick="event.preventDefault(); document.getElementById('areaDeleteForm{{$area->id}}').submit();" title="Delete" >
                                         <i class="fa-regular fa-trash-can"></i>
                                     </a>
+                                    <form action="{{route('area.delete', ['id' => $area->id])}}" method="POST" id="areaDeleteForm{{$area->id}}">
+                                        @csrf
+                                    </form>
+
+
                                 </td>
                             </tr>
-                        {{--@endforeach--}}
+                        @endforeach
                         </tbody>
                     </table>
                 </div>  <!-- end card-body -->
