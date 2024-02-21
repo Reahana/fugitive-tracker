@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\TrackerController;
 use App\Http\Controllers\LawListController;
 use App\Http\Controllers\CitizenController;
+use App\Http\Controllers\AreaController;
 
 use App\Models\RoleRoute;
 
@@ -116,7 +117,12 @@ Route::middleware([ 'auth:sanctum',  config('jetstream.auth_session'), 'verified
     Route::post('/update-nid/{id}', [CitizenController::class, 'update'])->name('nid.update');
     Route::post('/delete-nid/{id}', [CitizenController::class, 'delete'])->name('nid.delete');
 
-
+    Route::get('/add-area',[AreaController::class,'index'])->name('add-area');
+    Route::post('/new-area', [AreaController::class, 'create'])->name('area.new');
+    Route::get('/manage-area',[AreaController::class, 'manage'])->name('manage-area');
+    Route::get('/edit-area/{id}',[AreaController::class, 'edit'])->name('edit-area');
+    Route::post('/update-area/{id}', [AreaController::class, 'update'])->name('area.update');
+    Route::post('/delete-area/{id}', [AreaController::class, 'delete'])->name('area.delete');
 
 
 

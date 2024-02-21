@@ -124,10 +124,10 @@
                 <div class="collapse" id="sidebarProjects">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="">Add Area</a>
+                            <a href="{{route('add-area')}}">Add Area</a>
                         </li>
                         <li>
-                            <a href="">Manage Area</a>
+                            <a href="{{route('manage-area')}}">Manage Area</a>
                         </li>
 
                     </ul>

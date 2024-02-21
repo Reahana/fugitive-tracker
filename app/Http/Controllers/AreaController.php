@@ -10,4 +10,9 @@ class AreaController extends Controller
     {
         return view('admin.area.add');
     }
+
+    public function manage ()
+    {
+        return view('admin.area.manage');
+    }
 }
