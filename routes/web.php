@@ -108,10 +108,7 @@ Route::middleware([ 'auth:sanctum',  config('jetstream.auth_session'), 'verified
     Route::get('/user/delete/{id}', [UserController::class, 'delete'])->name('user.delete');
 
 
-//    Route::get('/add-nid',[
-//        'uses' => 'App\Http\Controllers\CitizenController@index',
-//        'as'        => 'add-nid'
-//    ]);
+//===========Citizen section=======
     Route::get('/add-nid',[CitizenController::class, 'index'])->name('add-nid');
     Route::post('/new-nid', [CitizenController::class, 'create'])->name('nid.new');
     Route::get('/manage-nid',[CitizenController::class, 'manage'])->name('manage-nid');

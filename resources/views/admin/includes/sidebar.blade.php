@@ -115,6 +115,26 @@
             </li>
 
             <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#sidebarProjects" aria-expanded="false"
+                   aria-controls="sidebarProjects" class="side-nav-link">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span> Area </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarProjects">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="">Add Area</a>
+                        </li>
+                        <li>
+                            <a href="">Manage Area</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+
+            <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarTasks" aria-expanded="false" aria-controls="sidebarTasks"
                    class="side-nav-link">
                     <i class="fa-solid fa-scale-balanced"></i>
