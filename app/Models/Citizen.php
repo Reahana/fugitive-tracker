@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Citizen extends Model
 {
     use HasFactory;
-
     private static $citizen, $image ,$imageName ,$directory,$imageUrl;
 
 
@@ -83,5 +82,4 @@ class Citizen extends Model
         }
         self::$citizen->Delete();
     }
-
 }

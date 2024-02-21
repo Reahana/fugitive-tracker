@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('citizens', function (Blueprint $table) {
             $table->id();
-            $table->integer('nid');
+            $table->integer('nid')->unique();
             $table->string('name');
             $table->date('dob');
             $table->text('image')->nullable();

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Area extends Model
 {
     use HasFactory;
+
     private static $area;
 
     public  static  function newArea($request)
@@ -18,7 +19,6 @@ class Area extends Model
         self::$area->save();
         return self::$area;
     }
-
     public static function updateArea($request, $id)
     {
         self::$area = Area::find($id);
@@ -36,4 +36,7 @@ class Area extends Model
 
         self::$area->Delete();
     }
+
+
+
 }
