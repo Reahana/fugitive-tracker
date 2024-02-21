@@ -8,13 +8,13 @@
                 <div class="card-body">
                     <h4 class="header-title">Add NID form</h4>
                     <p class="text-muted font-14">{{Session::get('message')}}</p>
-                    <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="{{route('nid.new')}}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row mb-3">
                             <label for="inputEmail31" class="col-3 col-form-label">NID Number</label>
                             <div class="col-9">
-                                <input type="email" class="form-control" name="nid" id="nid" placeholder="National Identification Number"/>
+                                <input type="number" class="form-control" name="nid" id="nid" placeholder="National Identification Number"/>
                             </div>
                         </div>
                         <div class="row mb-3">

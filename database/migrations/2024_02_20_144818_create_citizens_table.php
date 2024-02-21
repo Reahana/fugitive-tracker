@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('citizens', function (Blueprint $table) {
             $table->id();
+            $table->integer('nid');
+            $table->string('name');
+            $table->date('dob')->nullable();
+            $table->text('image')->nullable();
             $table->timestamps();
         });
     }

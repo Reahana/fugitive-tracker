@@ -41,4 +41,47 @@ class Citizen extends Model
         self::$citizen->save();
         return self::$citizen;
     }
+    public static function updateCitizen($request, $id)
+    {
+        self::$citizen = Citizen::find($id);
+
+        self::$image = $request->file('image');
+
+        if(self::$image)
+        {
+
+            if(file_exists(self::$citizen->image))
+            {
+                unlink(self::$citizen->image);
+            }
+            self::$imageUrl = self::getImageUrl($request);
+        }
+        else
+        {
+            self::$imageUrl = self::$citizen->image;
+
+        }
+
+        self::$citizen->nid  = $request->nid;
+        self::$citizen->name       = $request->name;
+        self::$citizen->dob      = $request->dob;
+        self::$citizen->image      = self::$imageUrl;
+        self::$citizen->save();
+
+
+    }
+    public static function deleteCitizen($id)
+    {
+        self::$citizen = Citizen::find($id);
+
+
+        if(file_exists(self::$citizen->image))
+        {
+            unlink(self::$citizen->image);
+
+
+        }
+        self::$citizen->Delete();
+    }
+
 }

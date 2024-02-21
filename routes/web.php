@@ -67,13 +67,30 @@ Route::get('/add-nid',[
     'uses' => 'App\Http\Controllers\CitizenController@index',
     'as'        => 'add-nid'
 ]);
+Route::post('/new-nid', [
+    'uses' => 'App\Http\Controllers\CitizenController@create',
+    'as'   => 'nid.new',
+//    'middleware' => ['auth:sanctum', 'verified','is_admin']
+]);
 Route::get('/manage-nid',[
     'uses' => 'App\Http\Controllers\CitizenController@manage',
     'as'        => 'manage-nid'
 ]);
-Route::get('/edit-nid',[
+Route::get('/edit-nid/{id}',[
     'uses' => 'App\Http\Controllers\CitizenController@edit',
     'as'        => 'edit-nid'
+]);
+Route::post('/update-nid/{id}', [
+
+    'uses' => 'App\Http\Controllers\CitizenController@update',
+    'as'   => 'nid.update',
+
+//    'middleware' => ['auth:sanctum', 'verified','is_admin']
+]);
+Route::post('delete-nid/{id}',[
+    'uses' => 'App\Http\Controllers\CitizenController@delete',
+    'as'   => 'nid.delete',
+//    'middleware' => ['auth:sanctum', 'verified','is_admin']
 ]);
 
 Route::get('/add-officer',[
