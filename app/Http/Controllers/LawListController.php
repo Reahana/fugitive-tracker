@@ -24,23 +24,22 @@ class LawListController extends Controller
 
     public function manage ()
     {
-        return view('admin.area.manage',['areas' => Area::orderBy('id')->get()]);
+        return view('admin.law-list.manage',['laws' => Law::orderBy('id')->get()]);
     }
 
     public function edit($id)
     {
-        return view('admin.area.edit',['area' => Area::find($id) ]);
+        return view('admin.law-list.edit',['law' => Law::find($id) ]);
     }
     public function update(Request $request, $id)
     {
-        Area::updateArea($request,$id);
-
-        return redirect('/manage-area')->with('message', 'Area info update successfully');
+        Law::updateLaw($request,$id);
+        return redirect('/manage-law')->with('message', 'Law info update successfully');
     }
     public function delete( $id)
     {
-        Area::deleteArea($id);
+        Law::deleteLaw($id);
 
-        return redirect('/manage-area')->with('message', 'Area  delete successfully');
+        return redirect('/manage-law')->with('message', 'Law  delete successfully');
     }
 }
