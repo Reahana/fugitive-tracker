@@ -8,4 +8,37 @@ use Illuminate\Database\Eloquent\Model;
 class Law extends Model
 {
     use HasFactory;
+
+    private static $law;
+
+    public  static  function newLaw($request)
+    {
+        self::$law = new Area();
+        self::$law->l_id  = $request->l_id;
+        self::$law->clause       = $request->clause;
+        self::$law->law  = $request->law;
+        self::$law->fine       = $request->fine;
+        self::$law->save();
+        return self::$law;
+    }
+    public static function updateLaw($request, $id)
+    {
+        self::$law = Law::find($id);
+
+        self::$law->l_id  = $request->l_id;
+        self::$law->clause       = $request->clause;
+        self::$law->law  = $request->law;
+        self::$law->fine       = $request->fine;
+        self::$law->save();
+
+        self::$law->save();
+
+
+    }
+    public static function deleteLaw($id)
+    {
+        self::$law = Law::find($id);
+
+        self::$law->Delete();
+    }
 }
