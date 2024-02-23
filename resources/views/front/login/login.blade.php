@@ -149,16 +149,17 @@
     <div class="shape"></div>
     <div class="shape"></div>
 </div>
-<form>
+<form action="{{route('officer-login')}}" method="POST">
+    @csrf
     <h3>Login Here</h3>
 
-    <label for="username">Username</label>
-    <input type="text" placeholder="Email or Phone" id="username">
+    <label for="username">Email</label>
+    <input type="text" placeholder="Email" name="email" id="username">
 
     <label for="password">Password</label>
-    <input type="password" placeholder="Password" id="password">
+    <input type="password" placeholder="Password" name="password" id="password">
 
-    <button class="login-btn"><a  href={{route('officers-dashboard')}}>Log In</a></button>
+    <button class="login-btn " type="submit">Log In</button>
 
     <div class="social">
         <button class="go"><a href={{route('/')}}><i class="fa-solid fa-arrow-left"></i>Back</a> </button>

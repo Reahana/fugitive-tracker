@@ -24,7 +24,7 @@
                     <a class="nav-link {{ request()->is('check-status') ? 'active-link' : ''}}" href={{route('check-status')}}>Check My Status </a>
                 </li>
                 <li class="nav-item  menu ">
-                    <a class="nav-link login-btn" href={{route('officer-login')}} ><i class="fa-solid fa-user "></i> Log in</a>
+                    <a class="nav-link login-btn" href={{route('login-page')}} ><i class="fa-solid fa-user "></i> Log in</a>
                 </li>
             </ul>
 

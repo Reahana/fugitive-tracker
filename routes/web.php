@@ -39,6 +39,10 @@ Route::get('/',[
     'uses' => 'App\Http\Controllers\TrackerController@index',
     'as'        => '/'
 ]);
+Route::get('/redirect-page',[
+    'uses' => 'App\Http\Controllers\TrackerController@redirect',
+    'as'        => 'redirect.page'
+]);
 Route::get('/law-list',[
     'uses' => 'App\Http\Controllers\LawListController@index',
     'as'        => 'law-list'
@@ -57,13 +61,21 @@ Route::get('/how-to-solve',[
     'as'        => 'how-to-solve'
 ]);
 
-Route::get('/officer-login',[
+Route::get('/login-page',[
     'uses' => 'App\Http\Controllers\LoginController@index',
+    'as'        => 'login-page'
+
+]);
+
+Route::post('/officer-login',[
+    'uses' => 'App\Http\Controllers\LoginController@officer',
     'as'        => 'officer-login'
 ]);
+
 Route::get('/officers-dashboard',[
     'uses' => 'App\Http\Controllers\OfficerDashboardController@index',
-    'as'        => 'officers-dashboard'
+    'as'        => 'officers-dashboard',
+    'middleware' => 'is_officer'
 ]);
 
 
@@ -91,9 +103,9 @@ Route::get('/post/edit/{id}', [PostController::class, 'edit'])->name('post.edit'
 Route::post('/post/update/{id}', [PostController::class, 'edit'])->name('post.update');
 Route::post('/post/delete/{id}', [PostController::class, 'delete'])->name('post.delete');
 
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware(['auth:sanctum', 'verified','is_register']);
+Route::middleware([ 'auth:sanctum',  config('jetstream.auth_session'), 'verified','is_admin'])->group(function () {
 
-Route::middleware([ 'auth:sanctum',  config('jetstream.auth_session'), 'verified'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/role/add', [RoleController::class, 'index'])->name('role.add');
     Route::post('/role/new', [RoleController::class, 'create'])->name('role.new');
