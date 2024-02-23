@@ -44,7 +44,7 @@ Route::get('/redirect-page',[
     'as'        => 'redirect.page'
 ]);
 Route::get('/law-list',[
-    'uses' => 'App\Http\Controllers\LawListController@index',
+    'uses' => 'App\Http\Controllers\LawListController@show',
     'as'        => 'law-list'
 ]);
 Route::get('/check-status',[
@@ -147,6 +147,14 @@ Route::middleware([ 'auth:sanctum',  config('jetstream.auth_session'), 'verified
     Route::post('/update-officer/{id}', [OfficerController::class, 'update'])->name('officer.update');
     Route::post('/delete-officer/{id}', [OfficerController::class, 'delete'])->name('officer.delete');
 
+//======== Law list section ====
+    Route::get('/add-law',[LawListController::class,'index'])->name('add-law');
+    Route::post('/new-law', [LawListController::class, 'create'])->name('law.new');
+    Route::get('/manage-law',[LawListController::class, 'manage'])->name('manage-law');
+    Route::get('/edit-law/{id}',[LawListController::class, 'edit'])->name('edit-law');
+    Route::post('/update-law/{id}', [LawListController::class, 'update'])->name('law.update');
+    Route::post('/delete-law/{id}', [LawListController::class, 'delete'])->name('law.delete');
 
+//========
 
 });

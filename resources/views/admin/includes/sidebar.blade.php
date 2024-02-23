@@ -144,14 +144,12 @@
                 <div class="collapse" id="sidebarTasks">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="apps-tasks.html">List</a>
+                            <a href="{{route('add-law')}}">Add Law</a>
                         </li>
                         <li>
                             <a href="apps-tasks-details.html">Details</a>
                         </li>
-                        <li>
-                            <a href="apps-kanban.html">Kanban Board</a>
-                        </li>
+
                     </ul>
                 </div>
             </li>
