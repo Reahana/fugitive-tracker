@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('laws', function (Blueprint $table) {
             $table->id();
+            $table->integer('l_id')->unique();
+            $table->string('clause');
+            $table->string('law');
+            $table->integer('fine');
             $table->timestamps();
         });
     }
