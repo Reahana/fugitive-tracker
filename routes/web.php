@@ -11,6 +11,7 @@ use App\Http\Controllers\TrackerController;
 use App\Http\Controllers\LawListController;
 use App\Http\Controllers\CitizenController;
 use App\Http\Controllers\AreaController;
+use App\Http\Controllers\OfficerController;
 
 use App\Models\RoleRoute;
 
@@ -117,6 +118,7 @@ Route::middleware([ 'auth:sanctum',  config('jetstream.auth_session'), 'verified
     Route::post('/update-nid/{id}', [CitizenController::class, 'update'])->name('nid.update');
     Route::post('/delete-nid/{id}', [CitizenController::class, 'delete'])->name('nid.delete');
 
+    //======= Area section =====
     Route::get('/add-area',[AreaController::class,'index'])->name('add-area');
     Route::post('/new-area', [AreaController::class, 'create'])->name('area.new');
     Route::get('/manage-area',[AreaController::class, 'manage'])->name('manage-area');
@@ -125,6 +127,13 @@ Route::middleware([ 'auth:sanctum',  config('jetstream.auth_session'), 'verified
     Route::post('/delete-area/{id}', [AreaController::class, 'delete'])->name('area.delete');
 
 
+    //==== Officer section ======
+    Route::get('/add-officer',[OfficerController::class,'index'])->name('add-officer');
+    Route::post('/new-officer', [OfficerController::class, 'create'])->name('officer.new');
+    Route::get('/manage-officer',[OfficerController::class, 'manage'])->name('manage-officer');
+    Route::get('/edit-officer/{id}',[OfficerController::class, 'edit'])->name('edit-officer');
+    Route::post('/update-officer/{id}', [OfficerController::class, 'update'])->name('officer.update');
+    Route::post('/delete-officer/{id}', [OfficerController::class, 'delete'])->name('officer.delete');
 
 
 

@@ -16,38 +16,37 @@
                             <th>Rank</th>
                             <th>Posting</th>
                             <th>Contact Number</th>
+                            <th>Email</th>
                             <th>Image</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        {{--@foreach($users as $user)--}}
+                        @foreach($officers as $officer)
                         <tr>
-                            {{--<td>{{$loop->iteration}}</td>--}}
-                            <td>1</td>
-                            <td>NID</td>
-                            <td>Name</td>
-                            <td>Rank</td>
-                            <td>Posting</td>
-                            <td>Contact Number</td>
-                            <td>Image</td>
-                            {{--<td>{{$user->mobile}}</td>--}}
+                            <td>{{$loop->iteration}}</td>
+                            <td>{{$officer->p_id}}</td>
+                            <td>{{$officer->name}}</td>
+                            <td>{{$officer->rank}}</td>
+                            <td>{{$officer->posting}}</td>
+                            <td>{{$officer->number}}</td>
+                            <td>{{$officer->email}}</td>
+                            <td>{{$officer->image}}</td>
+
                             <td>
-                                {{--<a href="{{route('user.edit', ['id' => $user->id])}}" class="btn btn-success btn-sm" title="Edit">--}}
-                                {{--<i class="ri-edit-box-fill"></i>--}}
-                                {{--</a>--}}
-                                {{--<a href="{{route('user.delete', ['id' => $user->id])}}" class="btn btn-danger btn-sm {{$user->id == 1 ? 'disabled' : ''}}" title="Delete" onclick="return confirm('Ary you sure to delete this..');">--}}
-                                {{--<i class="ri-chat-delete-fill"></i>--}}
-                                {{--</a>--}}
-                                <a href="{{route('edit-officer')}}" class="btn btn-success btn-sm" title="Edit">
-                                    <i class="ri-edit-box-fill"></i>
+                                <a href="{{route('edit-officer', ['id' => $officer->id])}}" class="btn btn-success btn-sm" title="Edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
-                                <a href="" class="btn btn-danger btn-sm " title="Delete" onclick="return confirm('Ary you sure to delete this..');">
-                                    <i class="ri-chat-delete-fill"></i>
+                                <a href="" class="btn btn-danger btn-sm " onclick="event.preventDefault(); document.getElementById('officerDeleteForm{{$officer->id}}').submit();" title="Delete" >
+                                    <i class="fa-regular fa-trash-can"></i>
                                 </a>
+                                <form action="{{route('officer.delete', ['id' => $officer->id])}}" method="POST" id="officerDeleteForm{{$officer->id}}">
+                                    @csrf
+                                </form>
+
                             </td>
                         </tr>
-                        {{--@endforeach--}}
+                        @endforeach
                         </tbody>
                     </table>
                 </div>  <!-- end card-body -->

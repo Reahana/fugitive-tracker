@@ -8,13 +8,13 @@
                 <div class="card-body">
                     <h4 class="header-title">Add Officer Form</h4>
                     <p class="text-muted font-14">{{Session::get('message')}}</p>
-                    <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="{{route('officer.new')}}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row mb-3">
                             <label for="inputEmail31" class="col-3 col-form-label">ID No</label>
                             <div class="col-9">
-                                <input type="email" class="form-control" name="p_id" id="p_id" placeholder="ID No"/>
+                                <input type="number" class="form-control" name="p_id" id="p_id" placeholder="ID No"/>
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -32,7 +32,12 @@
                         <div class="row mb-3">
                             <label for="inputEmail33" class="col-3 col-form-label">Posting</label>
                             <div class="col-9">
-                                <input type="text" class="form-control" name="posting" id="posting" placeholder="Posting"/>
+                                <select class="form-control" name="posting">
+                                    <option> -- Select Area -- </option>
+                                    @foreach($areas as $area)
+                                        <option value="{{$area->name}}">{{$area->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <div class="row mb-3">

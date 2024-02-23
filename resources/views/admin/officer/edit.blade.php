@@ -8,42 +8,57 @@
                 <div class="card-body">
                     <h4 class="header-title">Edit NID Form</h4>
                     <p class="text-muted font-14">{{Session::get('message')}}</p>
-                    <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="{{route('officer.update', ['id' => $officer->id])}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">
                             <label for="inputEmail31" class="col-3 col-form-label">ID No</label>
                             <div class="col-9">
-                                <input type="email" class="form-control" name="number" id="id" placeholder="ID No"/>
+                                <input type="number" class="form-control" name="p_id" value="{{$officer->p_id}}" id="id" placeholder="ID No"/>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputEmail3" class="col-3 col-form-label">Name</label>
                             <div class="col-9">
-                                <input type="text" class="form-control" name="name" id="inputEmail3" placeholder="Name"/>
+                                <input type="text" class="form-control" name="name" value="{{$officer->name}}" id="inputEmail3" placeholder="Name"/>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputEmail33" class="col-3 col-form-label">Rank</label>
                             <div class="col-9">
-                                <input type="text" class="form-control" name="rank" id="inputEmail33" placeholder="Rank"/>
+                                <input type="text" class="form-control" name="rank" value="{{$officer->rank}}" id="inputEmail33" placeholder="Rank"/>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputEmail33" class="col-3 col-form-label">Posting</label>
                             <div class="col-9">
-                                <input type="text" class="form-control" name="posting" id="inputEmail33" placeholder="Posting"/>
+                                <select class="form-control" name="posting">
+                                    <option> -- Select Area -- </option>
+                                    @foreach($areas as $area))
+                                        <option value="{{$area->name}}"{{$area->name == $officer->posting ? 'selected' : ''}}>{{$area->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputEmail31" class="col-3 col-form-label">Contact Number</label>
                             <div class="col-9">
-                                <input type="email" class="form-control" name="number" id="id" placeholder="Contact Number"/>
+                                <input type="number" class="form-control" name="number" value="{{$officer->number}}" id="id" placeholder="Contact Number"/>
                             </div>
                         </div>
+
+                        <div class="row mb-3">
+                            <label for="inputEmail31" class="col-3 col-form-label">Email</label>
+                            <div class="col-9">
+                                <input type="email" class="form-control" name="email" value="{{$officer->email}}" id="email" placeholder="Email"/>
+                            </div>
+                        </div>
+
+
                         <div class="row mb-3">
                             <label for="inputEmail34" class="col-3 col-form-label"> Image</label>
                             <div class="col-9">
                                 <input type="file" class="form-control" name="image" id="inputEmail34" placeholder="User Image"/>
+                                <img src="{{asset($officer->image)}}" alt="" height="100" width="120"/>
                             </div>
                         </div>
 
