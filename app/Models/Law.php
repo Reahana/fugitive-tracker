@@ -13,7 +13,7 @@ class Law extends Model
 
     public  static  function newLaw($request)
     {
-        self::$law = new Area();
+        self::$law = new Law();
         self::$law->l_id  = $request->l_id;
         self::$law->clause       = $request->clause;
         self::$law->law  = $request->law;

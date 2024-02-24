@@ -147,7 +147,7 @@
                             <a href="{{route('add-law')}}">Add Law</a>
                         </li>
                         <li>
-                            <a href="apps-tasks-details.html">Details</a>
+                            <a href="{{route('manage-law')}}">Manage Law</a>
                         </li>
 
                     </ul>
