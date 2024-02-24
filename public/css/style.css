@@ -16,7 +16,7 @@
   padding-left: 10px !important;
   padding-right: 10px !important;
 }
-.menu:first-child{padding-left: 160px !important;}
+.menu:first-child{padding-left: 150px !important;}
 .menu:last-child{padding-left: 150px !important;}
 .menu a{color:#54ABDF !important;}
 .menu a:hover{
@@ -99,9 +99,14 @@ font-size: 50px;
 
 /* ==== check page =====  */
   .law-list{
-    background-color: #00b3ee;
+    background-color: #00013D;
+    background-image: linear-gradient(to  left ,#00013D, #1ab7ea);
   }
-/*.check-status , .solve-page , .fine-page{*/
-  /*background-color: #f9f9f9;*/
-  /*min-height: 76vh;*/
-/*}*/
+  .fine-page{
+    background-color: #FEFFDD;
+
+  }
+.check-status , .solve-page {
+  background-color: #f1f1f1;
+  min-height: 76vh;
+}
