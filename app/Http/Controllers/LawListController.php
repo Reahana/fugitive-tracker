@@ -9,7 +9,7 @@ class LawListController extends Controller
 {
     public function show()
     {
-        return view('front.law-list.law');
+        return view('front.law-list.law',['laws' => Law::orderBy('id')->get()]);
     }
     public function index()
     {

@@ -98,7 +98,10 @@ font-size: 50px;
 
 
 /* ==== check page =====  */
-.check-status , .solve-page, .law-list , .fine-page{
-  background-color: #f9f9f9;
-  min-height: 76vh;
-}
+  .law-list{
+    background-color: #00b3ee;
+  }
+/*.check-status , .solve-page , .fine-page{*/
+  /*background-color: #f9f9f9;*/
+  /*min-height: 76vh;*/
+/*}*/
