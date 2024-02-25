@@ -32,7 +32,7 @@
                     <span class="nav-label">File Case</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a href="form_basic.html">Basic Forms</a>
+                        <a href="{{route('add-case')}}">Add Case</a>
                     </li>
                     <li>
                         <a href="form_advanced.html">Advanced Plugins</a>

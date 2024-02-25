@@ -12,6 +12,7 @@ use App\Http\Controllers\LawListController;
 use App\Http\Controllers\CitizenController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\OfficerController;
+use App\Http\Controllers\CaseFileController;
 
 use App\Models\RoleRoute;
 
@@ -61,6 +62,8 @@ Route::get('/how-to-solve',[
     'as'        => 'how-to-solve'
 ]);
 
+
+//Officer section
 Route::get('/login-page',[
     'uses' => 'App\Http\Controllers\LoginController@index',
     'as'        => 'login-page'
@@ -78,22 +81,16 @@ Route::get('/officers-dashboard',[
     'middleware' => 'is_officer'
 ]);
 
+Route::get('/add-case',[CaseFileController::class,'index'])->name('add-case');
+Route::post('/new-law', [LawListController::class, 'create'])->name('law.new');
+Route::get('/manage-law',[LawListController::class, 'manage'])->name('manage-law');
+Route::get('/edit-law/{id}',[LawListController::class, 'edit'])->name('edit-law');
+Route::post('/update-law/{id}', [LawListController::class, 'update'])->name('law.update');
+Route::post('/delete-law/{id}', [LawListController::class, 'delete'])->name('law.delete');
 
 
-Route::get('/add-officer',[
-    'uses' => 'App\Http\Controllers\OfficerController@index',
-    'as'        => 'add-officer'
-]);
 
-Route::get('manage-officer',[
-    'uses' => 'App\Http\Controllers\OfficerController@manage',
-    'as'        =>'manage-officer'
-]);
 
-Route::get('/edit-officer',[
-    'uses' => 'App\Http\Controllers\OfficerController@edit',
-    'as'        => 'edit-officer'
-]);
 
 //Route::get('/', [HomeController::class, 'index']);
 Route::get('/post/add', [PostController::class, 'index'])->name('post.add')->middleware('roles');
