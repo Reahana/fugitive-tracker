@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('l_id')->unique();
             $table->string('clause');
-            $table->string('law');
+            $table->string('title');
             $table->integer('fine');
             $table->timestamps();
         });

@@ -21,7 +21,7 @@
             <tr>
                 <th>{{$loop->iteration}}</th>
                 <td>{{$law->clause}}</td>
-                <td>{{$law->law}}</td>
+                <td>{{$law->title}}</td>
             </tr>
             @endforeach
             </tbody>

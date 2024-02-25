@@ -16,7 +16,7 @@ class Law extends Model
         self::$law = new Law();
         self::$law->l_id  = $request->l_id;
         self::$law->clause       = $request->clause;
-        self::$law->law  = $request->law;
+        self::$law->title  = $request->title;
         self::$law->fine       = $request->fine;
         self::$law->save();
         return self::$law;
@@ -27,7 +27,7 @@ class Law extends Model
 
         self::$law->l_id  = $request->l_id;
         self::$law->clause       = $request->clause;
-        self::$law->law  = $request->law;
+        self::$law->title  = $request->title;
         self::$law->fine       = $request->fine;
         self::$law->save();
 

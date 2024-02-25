@@ -19,7 +19,7 @@
                 <tr>
                     <th>{{$loop->iteration}}</th>
                     {{--<td>{{$law->clause}}</td>--}}
-                    <td>{{$law->law}}</td>
+                    <td>{{$law->title}}</td>
                     <td>{{$law->fine}} Taka</td>
                 </tr>
             @endforeach

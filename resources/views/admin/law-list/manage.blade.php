@@ -24,7 +24,7 @@
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$law->l_id}}</td>
                                 <td>{{$law->clause}}</td>
-                                <td>{{$law->law}}</td>
+                                <td>{{$law->title}}</td>
                                 <td>{{$law->fine}}</td>
                                 <td>
                                     <a href="{{route('edit-law', ['id' => $law->id])}}" class="btn btn-success btn-sm" title="Edit">

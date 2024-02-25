@@ -89,7 +89,17 @@ Route::post('/update-law/{id}', [LawListController::class, 'update'])->name('law
 Route::post('/delete-law/{id}', [LawListController::class, 'delete'])->name('law.delete');
 
 
+Route::get('/get-name-by-nid', [
+    'uses' => 'App\Http\Controllers\CaseFileController@getName',
+    'as'   => 'nid.get-name',
+    'middleware' => 'is_officer'
+]);
 
+Route::get('/get-law-by-clause', [
+    'uses' => 'App\Http\Controllers\CaseFileController@getLaw',
+    'as'   => 'nid.get-law',
+    'middleware' => 'is_officer'
+]);
 
 
 //Route::get('/', [HomeController::class, 'index']);

@@ -26,7 +26,7 @@
                         <div class="row mb-3">
                             <label for="inputEmail3" class="col-3 col-form-label">Title</label>
                             <div class="col-9">
-                                <input type="text" class="form-control" name="law" value="{{$law->law}}" id="law" placeholder="Title"/>
+                                <input type="text" class="form-control" name="title" value="{{$law->title}}" id="title" placeholder="Title"/>
                             </div>
                         </div>
                         <div class="row mb-3">
