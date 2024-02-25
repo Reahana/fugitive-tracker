@@ -35,7 +35,7 @@
                         <a href="{{route('add-case')}}">Add Case</a>
                     </li>
                     <li>
-                        <a href="form_advanced.html">Advanced Plugins</a>
+                        <a href="{{route('manage-case')}}"> Manage Case</a>
                     </li>
 
                 </ul>

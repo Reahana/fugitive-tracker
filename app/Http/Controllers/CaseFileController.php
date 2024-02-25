@@ -36,7 +36,7 @@ class CaseFileController extends Controller
 
     public function manage ()
     {
-        return view('admin.area.manage',['areas' => Area::orderBy('id')->get()]);
+        return view('front.officer.file-case..manage',['cases' => CaseFile::orderBy('id')->get()]);
     }
 
     public function edit($id)

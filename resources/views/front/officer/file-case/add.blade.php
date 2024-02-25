@@ -22,7 +22,7 @@
                             </button>
                         </div>
                     @endif
-                    <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="{{route('case.new')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label"> Case ID</label>
@@ -88,7 +88,7 @@
 
                         <div class="form-group row">
                             <div class="col-sm-10 ml-sm-auto">
-                                <button class="btn btn-info btn-block" type="submit">Add New NID</button>
+                                <button class="btn btn-info btn-block" type="submit">File New Case</button>
                             </div>
                         </div>
                     </form>

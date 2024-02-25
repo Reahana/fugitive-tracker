@@ -82,11 +82,11 @@ Route::get('/officers-dashboard',[
 ]);
 
 Route::get('/add-case',[CaseFileController::class,'index'])->name('add-case');
-Route::post('/new-law', [LawListController::class, 'create'])->name('law.new');
-Route::get('/manage-law',[LawListController::class, 'manage'])->name('manage-law');
-Route::get('/edit-law/{id}',[LawListController::class, 'edit'])->name('edit-law');
-Route::post('/update-law/{id}', [LawListController::class, 'update'])->name('law.update');
-Route::post('/delete-law/{id}', [LawListController::class, 'delete'])->name('law.delete');
+Route::post('/new-case', [CaseFileController::class, 'create'])->name('case.new');
+Route::get('/manage-case',[CaseFileController::class, 'manage'])->name('manage-case');
+Route::get('/edit-case/{id}',[CaseFileController::class, 'edit'])->name('edit-case');
+Route::post('/update-case/{id}', [CaseFileController::class, 'update'])->name('case.update');
+Route::post('/delete-case/{id}', [CaseFileController::class, 'delete'])->name('case.delete');
 
 
 Route::get('/get-name-by-nid', [
