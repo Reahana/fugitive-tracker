@@ -31,7 +31,7 @@ class Law extends Model
         self::$law->fine       = $request->fine;
         self::$law->save();
 
-        self::$law->save();
+
 
 
     }

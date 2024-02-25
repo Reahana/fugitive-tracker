@@ -14,6 +14,7 @@
                 <th scope="col">Clause</th>
                 <th scope="col">Title</th>
                 {{--<th scope="col">Handle</th>--}}
+
             </tr>
             </thead>
             <tbody class="text-center fs-4 ">
@@ -22,6 +23,7 @@
                 <th>{{$loop->iteration}}</th>
                 <td>{{$law->clause}}</td>
                 <td>{{$law->title}}</td>
+
             </tr>
             @endforeach
             </tbody>

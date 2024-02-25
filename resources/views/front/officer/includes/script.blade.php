@@ -18,11 +18,11 @@
 
 <script>
     $(document).on('change','#nid',function () {
-        var semester = $(this).val();
+        var nid = $(this).val();
         $.ajax({
             method: 'GET',
             url: '{{url('/get-name-by-nid')}}',
-            data:{id: semester},
+            data:{id: nid},
             dataType:'json',
             success:function (res) {
                 var option = '';

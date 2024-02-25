@@ -1,13 +1,13 @@
 @extends('front.officer.master')
 @section('title')
-    Add new NID |
+    Add new Case |
 @endsection
 @section('body')
     <div class="row">
         <div class="col-md-12">
             <div class="ibox mt-3">
                 <div class="ibox-head">
-                    <div class="ibox-title">Add NID Form</div>
+                    <div class="ibox-title">Add Case Form</div>
                     <div class="ibox-tools">
                         <a class="ibox-collapse"><i class="fa fa-minus"></i></a>
                         <a class="fullscreen-link"><i class="fa fa-expand"></i></a>
@@ -27,7 +27,8 @@
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label"> Case ID</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="number" name="c_id" placeholder=" Case ID"/>
+                                <input class="form-control"  type="number" name="c_id" placeholder=" Case ID"/>
+
                             </div>
                         </div>
                         <div class="form-group row">
@@ -45,7 +46,7 @@
                             <label class="col-sm-2 col-form-label">Name</label>
                             <div class="col-sm-10">
                                <select class="form-control" name="name" id="name">
-                                    <option> -- Select Name -- </option>
+                                    <option> --  Name -- </option>
                                     @foreach($citizens as $citizen)
                                         <option value="{{$citizen->name}}">{{$citizen->name}}</option>
                                     @endforeach
@@ -62,7 +63,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Clause</label>
+                            <label class="col-sm-2 col-form-label">Case Clause</label>
                             <div class="col-sm-10">
                                 <select class="form-control" name="clause" id="clause">
                                     <option> -- Select Clause -- </option>
@@ -73,10 +74,10 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Title</label>
+                            <label class="col-sm-2 col-form-label">Case Title</label>
                             <div class="col-sm-10">
                                 <select class="form-control" name="title" id="title">
-                                    <option> -- Select title -- </option>
+                                    <option> --Law -- </option>
                                     @foreach($laws as $law)
                                         <option value="{{$law->title}}">{{$law->title}}</option>
                                     @endforeach
