@@ -9,6 +9,10 @@ use App\Http\Controllers\UserController;
 //tracker controllers
 use App\Http\Controllers\TrackerController;
 use App\Http\Controllers\LawListController;
+use App\Http\Controllers\AmountOfFineController;
+use App\Http\Controllers\HowToSolveController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OfficerDashboardController;
 use App\Http\Controllers\CitizenController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\OfficerController;
@@ -36,61 +40,54 @@ function getRoleName($routeName)
 | contains the "web" middleware group. Now create something great!
 |
 */
+// ========= Landing page
+Route::get('/',[TrackerController::class, 'index'])->name('/');
 
-Route::get('/',[
-    'uses' => 'App\Http\Controllers\TrackerController@index',
-    'as'        => '/'
-]);
-Route::get('/redirect-page',[
-    'uses' => 'App\Http\Controllers\TrackerController@redirect',
-    'as'        => 'redirect.page'
-]);
-Route::get('/law-list',[
-    'uses' => 'App\Http\Controllers\LawListController@show',
-    'as'        => 'law-list'
-]);
-Route::get('/check-status',[
-    'uses' => 'App\Http\Controllers\CheckStatusController@index',
-    'as'        => 'check-status'
-]);
+// ==== Redirect from registration
+Route::get('/redirect-page',[TrackerController::class, 'redirect'])->name('redirect.page');
+
+// ============= For citizen view ======
+//==== Law List view
+Route::get('/law-list',[LawListController::class, 'show'])->name('law-list');
+
+//=== Amount of fine view
+Route::get('/amount-of-fine',[AmountOfFineController::class, 'index'])->name('amount-of-fine');
+
+//===== How to solve view
+Route::get('/how-to-solve',[HowToSolveController::class, 'index'])->name('how-to-solve');
+
+
+// ==== Check Status section ===== //
+Route::get('/check-status',[CheckStatusController::class, 'index'])->name('check-status');
 
 Route::get('/search',[CheckStatusController::class, 'search'])->name('search');
 
-Route::get('/amount-of-fine',[
-    'uses' => 'App\Http\Controllers\AmountOfFineController@index',
-    'as'        => 'amount-of-fine'
-]);
-
-Route::get('/how-to-solve',[
-    'uses' => 'App\Http\Controllers\HowToSolveController@index',
-    'as'        => 'how-to-solve'
-]);
 
 
-//Officer section
-Route::get('/login-page',[
-    'uses' => 'App\Http\Controllers\LoginController@index',
-    'as'        => 'login-page'
+//======= Officer section ===== ///
 
-]);
+// Log in page of officers
+Route::get('/login-page',[LoginController::class, 'index'])->name('login-page');
+Route::post('/officer-login',[LoginController::class, 'officer'])->name('officer-login');
 
-Route::post('/officer-login',[
-    'uses' => 'App\Http\Controllers\LoginController@officer',
-    'as'        => 'officer-login'
-]);
+Route::middleware('is_officer')->group(function (){
 
-Route::get('/officers-dashboard',[
-    'uses' => 'App\Http\Controllers\OfficerDashboardController@index',
-    'as'        => 'officers-dashboard',
-    'middleware' => 'is_officer'
-]);
+    // Dashboard of Officers
+    Route::get('/officers-dashboard',[OfficerDashboardController::class, 'index'])->name('officers-dashboard');
 
-Route::get('/add-case',[CaseFileController::class,'index'])->name('add-case');
-Route::post('/new-case', [CaseFileController::class, 'create'])->name('case.new');
-Route::get('/manage-case',[CaseFileController::class, 'manage'])->name('manage-case');
-Route::get('/edit-case/{id}',[CaseFileController::class, 'edit'])->name('edit-case');
-Route::post('/update-case/{id}', [CaseFileController::class, 'update'])->name('case.update');
-Route::post('/delete-case/{id}', [CaseFileController::class, 'delete'])->name('case.delete');
+    // ==== Case file ====
+    Route::get('/add-case',[CaseFileController::class,'index'])->name('add-case');
+    Route::post('/new-case', [CaseFileController::class, 'create'])->name('case.new');
+    Route::get('/manage-case',[CaseFileController::class, 'manage'])->name('manage-case');
+    Route::get('/edit-case/{id}',[CaseFileController::class, 'edit'])->name('edit-case');
+    Route::post('/update-case/{id}', [CaseFileController::class, 'update'])->name('case.update');
+    Route::post('/delete-case/{id}', [CaseFileController::class, 'delete'])->name('case.delete');
+});
+
+Route::get('/',[TrackerController::class, 'index'])->name('/');
+
+
+
 
 
 

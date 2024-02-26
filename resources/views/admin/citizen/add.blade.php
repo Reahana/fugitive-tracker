@@ -26,7 +26,7 @@
                         <div class="row mb-3">
                             <label for="inputEmail33" class="col-3 col-form-label">Date of Birth</label>
                             <div class="col-9">
-                                <input type="date" class="form-control" name="dob" id="inputEmail33" placeholder="Date of Birth"/>
+                                <input type="date" class="form-control" name="dob" id="dob" placeholder="Date of Birth"/>
                             </div>
                         </div>
                         <div class="row mb-3">

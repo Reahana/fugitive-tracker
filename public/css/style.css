@@ -99,7 +99,7 @@ font-size: 50px;
 
 /* ==== check page =====  */
   .law-list{
-    background-color: #00013D;
+    background-color: #FEFFDD;
     background-image: linear-gradient(to  left ,#00013D, #1ab7ea);
     min-height: 76vh;
   }
