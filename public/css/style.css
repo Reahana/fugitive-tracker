@@ -107,7 +107,11 @@ font-size: 50px;
     background-color: #FEFFDD;
     min-height: 76vh;
   }
-.check-status , .solve-page {
-  background-color: #f1f1f1;
+.check-status {
+  background-color: #f4fff3;
   min-height: 76vh;
 }
+  .solve-page {
+    background-color: #f1f1f1;
+    min-height: 76vh;
+  }
