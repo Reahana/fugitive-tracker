@@ -1,13 +1,13 @@
-<link rel="shortcut icon" href="./image/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="{{asset('/')}}image/favicon.ico" type="image/x-icon">
 
 <!-- GLOBAL MAINLY STYLES-->
-<link href="./assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="./assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-<link href="./assets/vendors/themify-icons/css/themify-icons.css" rel="stylesheet" />
+<link href="{{asset('/')}}assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="{{asset('/')}}assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="{{asset('/')}}assets/vendors/themify-icons/css/themify-icons.css" rel="stylesheet" />
 <!-- PLUGINS STYLES-->
-<link href="./assets/vendors/jvectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
+<link href="{{asset('/')}}assets/vendors/jvectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
 <!-- THEME STYLES-->
-<link href="assets/css/main.min.css" rel="stylesheet" />
+<link href="{{asset('/')}}assets/css/main.min.css" rel="stylesheet" />
 
 <link rel="stylesheet" href="{{asset('/')}}assets/css/style.css">
 

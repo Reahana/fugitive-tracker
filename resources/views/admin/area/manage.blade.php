@@ -1,4 +1,4 @@
-@extends('admin.master')
+@extends('front.officer.master')
 
 @section('body')
     <div class="row">
@@ -24,15 +24,15 @@
                                 <td>{{$area->name}}</td>
 
                                 <td>
-                                    <a href="{{route('edit-area', ['id' => $area->id])}}" class="btn btn-success btn-sm" title="Edit">
+                                    <a href="{{route('edit-case', ['id' => $case->id])}}" class="btn btn-success btn-sm" title="Edit">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </a>
-                                    <a href="" class="btn btn-danger btn-sm " onclick="event.preventDefault(); document.getElementById('areaDeleteForm{{$area->id}}').submit();" title="Delete" >
-                                        <i class="fa-regular fa-trash-can"></i>
-                                    </a>
-                                    <form action="{{route('area.delete', ['id' => $area->id])}}" method="POST" id="areaDeleteForm{{$area->id}}">
-                                        @csrf
-                                    </form>
+                                    {{--<a href="" class="btn btn-danger btn-sm " onclick="event.preventDefault(); document.getElementById('areaDeleteForm{{$area->id}}').submit();" title="Delete" >--}}
+                                        {{--<i class="fa-regular fa-trash-can"></i>--}}
+                                    {{--</a>--}}
+                                    {{--<form action="{{route('area.delete', ['id' => $area->id])}}" method="POST" id="areaDeleteForm{{$area->id}}">--}}
+                                        {{--@csrf--}}
+                                    {{--</form>--}}
 
 
                                 </td>

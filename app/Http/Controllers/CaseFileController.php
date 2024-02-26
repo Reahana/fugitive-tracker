@@ -36,18 +36,18 @@ class CaseFileController extends Controller
 
     public function manage ()
     {
-        return view('front.officer.file-case..manage',['cases' => CaseFile::orderBy('id')->get()]);
+        return view('front.officer.file-case.manage',['cases' => CaseFile::orderBy('id')->get()]);
     }
 
     public function edit($id)
     {
-        return view('admin.area.edit',['area' => Area::find($id) ]);
+        return view('front.officer.file-case.edit',['case' => CaseFile::find($id) ,'citizens'=>Citizen::all(),'laws'=>Law::all()]);
     }
     public function update(Request $request, $id)
     {
-        Area::updateArea($request,$id);
+        CaseFile::updateCaseFile($request,$id);
 
-        return redirect('/manage-area')->with('message', 'Area info update successfully');
+        return redirect('/manage-case')->with('message', 'Case info update successfully');
     }
     public function delete( $id)
     {

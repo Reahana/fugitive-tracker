@@ -25,7 +25,7 @@ class CaseFile extends Model
         self::$caseFile->save();
         return self::$caseFile;
     }
-    public static function updateLaw($request, $id)
+    public static function updateCaseFile($request, $id)
     {
         self::$caseFile = CaseFile::find($id);
 
