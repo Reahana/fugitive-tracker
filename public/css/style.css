@@ -101,10 +101,11 @@ font-size: 50px;
   .law-list{
     background-color: #00013D;
     background-image: linear-gradient(to  left ,#00013D, #1ab7ea);
+    min-height: 76vh;
   }
   .fine-page{
     background-color: #FEFFDD;
-
+    min-height: 76vh;
   }
 .check-status , .solve-page {
   background-color: #f1f1f1;

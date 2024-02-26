@@ -13,6 +13,7 @@ use App\Http\Controllers\CitizenController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\OfficerController;
 use App\Http\Controllers\CaseFileController;
+use App\Http\Controllers\CheckStatusController;
 
 use App\Models\RoleRoute;
 
@@ -52,6 +53,9 @@ Route::get('/check-status',[
     'uses' => 'App\Http\Controllers\CheckStatusController@index',
     'as'        => 'check-status'
 ]);
+
+Route::get('/search',[CheckStatusController::class, 'search'])->name('search');
+
 Route::get('/amount-of-fine',[
     'uses' => 'App\Http\Controllers\AmountOfFineController@index',
     'as'        => 'amount-of-fine'
@@ -87,6 +91,8 @@ Route::get('/manage-case',[CaseFileController::class, 'manage'])->name('manage-c
 Route::get('/edit-case/{id}',[CaseFileController::class, 'edit'])->name('edit-case');
 Route::post('/update-case/{id}', [CaseFileController::class, 'update'])->name('case.update');
 Route::post('/delete-case/{id}', [CaseFileController::class, 'delete'])->name('case.delete');
+
+
 
 
 Route::get('/get-name-by-nid', [
