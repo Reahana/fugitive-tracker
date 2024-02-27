@@ -83,6 +83,11 @@ Route::middleware('is_officer')->group(function (){
     Route::get('/edit-case/{id}',[CaseFileController::class, 'edit'])->name('edit-case');
     Route::post('/update-case/{id}', [CaseFileController::class, 'update'])->name('case.update');
 //    Route::post('/delete-case/{id}', [CaseFileController::class, 'delete'])->name('case.delete');
+
+    Route::get('/get-name-by-nid', [CaseFileController::class,'getName'])->name('nid.get-name');
+    Route::get('/get-law-by-clause', [CaseFileController::class,'getLaw'])->name('nid.get-law');
+
+
 });
 
 Route::get('/case-dismiss',[CaseDismissController::class, 'index'])->name('dismiss');
@@ -90,21 +95,6 @@ Route::get('/request-dismiss/{id}',[CaseDismissController::class,'requestDismiss
 
 
 
-
-
-
-
-Route::get('/get-name-by-nid', [
-    'uses' => 'App\Http\Controllers\CaseFileController@getName',
-    'as'   => 'nid.get-name',
-    'middleware' => 'is_officer'
-]);
-
-Route::get('/get-law-by-clause', [
-    'uses' => 'App\Http\Controllers\CaseFileController@getLaw',
-    'as'   => 'nid.get-law',
-    'middleware' => 'is_officer'
-]);
 
 
 //Route::get('/', [HomeController::class, 'index']);
