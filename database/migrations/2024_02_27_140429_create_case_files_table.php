@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('case_files', function (Blueprint $table) {
             $table->id();
+            $table->integer('p_id');
             $table->integer('c_id')->unique();
             $table->integer('nid');
             $table->string('name');

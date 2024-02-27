@@ -14,6 +14,7 @@ class CaseFile extends Model
     public  static  function newCaseFile($request)
     {
         self::$caseFile = new CaseFile();
+        self::$caseFile->p_id  = $request->p_id;
         self::$caseFile->c_id  = $request->c_id;
         self::$caseFile->nid       = $request->nid;
         self::$caseFile->name       = $request->name;
@@ -29,6 +30,7 @@ class CaseFile extends Model
     {
         self::$caseFile = CaseFile::find($id);
 
+        self::$caseFile->p_id  = $request->p_id;
         self::$caseFile->c_id  = $request->c_id;
         self::$caseFile->nid       = $request->nid;
         self::$caseFile->name       = $request->name;
