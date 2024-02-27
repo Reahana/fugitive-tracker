@@ -25,6 +25,13 @@
                     <form class="form-horizontal" action="{{route('case.new')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
+                            <label class="col-sm-2 col-form-label"> Officer ID</label>
+                            <div class="col-sm-10">
+                                <input class="form-control"  type="number" name="p_id" value="{{auth()->user()->p_id}}" placeholder=" Case ID"/>
+
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label class="col-sm-2 col-form-label"> Case ID</label>
                             <div class="col-sm-10">
                                 <input class="form-control"  type="number" name="c_id" placeholder=" Case ID"/>
