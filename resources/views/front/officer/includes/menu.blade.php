@@ -41,16 +41,9 @@
                 </ul>
             </li>
             <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa-regular fa-rectangle-xmark"></i>
-                    <span class="nav-label">Dismiss</span><i class="fa fa-angle-left arrow"></i></a>
-                <ul class="nav-2-level collapse">
-                    <li>
-                        <a href="table_basic.html">Basic Tables</a>
-                    </li>
-                    <li>
-                        <a href="datatables.html">Datatables</a>
-                    </li>
-                </ul>
+                <a href="{{route('dismiss')}}"><i class="sidebar-item-icon fa-regular fa-rectangle-xmark"></i>
+                    <span class="nav-label">Dismiss</span></a>
+
             </li>
 
             <li class="heading">PAGES</li>

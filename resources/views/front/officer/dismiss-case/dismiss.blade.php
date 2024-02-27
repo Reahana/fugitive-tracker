@@ -46,21 +46,15 @@
 
 
                                 <td>
-                                    <a href="{{route('edit-case', ['id' => $case->id])}}" class="btn btn-success btn-xs">
-                                        <i class="fa fa-edit"></i>
+                                    <a href="{{route('request-dismiss', ['id' => $case->id])}}" class="btn btn-success btn-xs">
+                                        <i class="fa fa-trash"></i>
                                     </a>
-                                    {{--<a href="" class="btn btn-danger btn-xs" onclick="event.preventDefault(); document.getElementById('caseDeleteForm{{$case->id}}').submit();">--}}
-                                        {{--<i class="fa fa-trash"></i>--}}
-                                    {{--</a>--}}
-                                    {{--<form action="{{route('case.delete', ['id' => $case->id])}}" method="POST" id="caseDeleteForm{{$case->id}}">--}}
-                                        {{--@csrf--}}
-                                    {{--</form>--}}
-
                                 </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
+
                 </div>
             </div>
         </div>

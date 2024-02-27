@@ -18,6 +18,7 @@ use App\Http\Controllers\AreaController;
 use App\Http\Controllers\OfficerController;
 use App\Http\Controllers\CaseFileController;
 use App\Http\Controllers\CheckStatusController;
+use App\Http\Controllers\CaseDismissController;
 
 use App\Models\RoleRoute;
 
@@ -81,10 +82,11 @@ Route::middleware('is_officer')->group(function (){
     Route::get('/manage-case',[CaseFileController::class, 'manage'])->name('manage-case');
     Route::get('/edit-case/{id}',[CaseFileController::class, 'edit'])->name('edit-case');
     Route::post('/update-case/{id}', [CaseFileController::class, 'update'])->name('case.update');
-    Route::post('/delete-case/{id}', [CaseFileController::class, 'delete'])->name('case.delete');
+//    Route::post('/delete-case/{id}', [CaseFileController::class, 'delete'])->name('case.delete');
 });
 
-Route::get('/',[TrackerController::class, 'index'])->name('/');
+Route::get('/case-dismiss',[CaseDismissController::class, 'index'])->name('dismiss');
+Route::get('/request-dismiss/{id}',[CaseDismissController::class,'requestDismiss'])->name('request-dismiss');
 
 
 
