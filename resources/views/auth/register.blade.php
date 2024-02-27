@@ -1,12 +1,12 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            {{--<x-jet-authentication-card-logo />--}}
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}" x-data="{role_id: 1}">
             @csrf
 
             <div>
@@ -20,6 +20,14 @@
                     <option value="1">Officer</option>
                 </select>
             </div>
+
+            <div class="mt-4"  x-show="role_id == 1">
+
+                <x-jet-label for="p_id" value="{{ __('P_id') }}" />
+                <x-jet-input id="p_id" class="block mt-1 w-full" type="number" name="p_id" :value="old('p_id')"  />
+            </div>
+
+
             <div class="mt-4">
                 <x-jet-label for="email" value="{{ __('Email') }}" />
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
