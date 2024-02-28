@@ -27,14 +27,14 @@
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label"> Officer ID</label>
                             <div class="col-sm-10">
-                                <input class="form-control"  disabled type="number" name="p_id" value="{{$case->p_id}}" placeholder=" Case ID"/>
+                                <input class="form-control"   type="number" name="p_id" value="{{$case->p_id}}" placeholder=" Case ID"/>
 
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Case ID</label>
                             <div class="col-sm-10">
-                                <input class="form-control" disabled type="number" value="{{$case->c_id}}" name="c_id" placeholder=" Case ID"/>
+                                <input class="form-control" type="number" value="{{$case->c_id}}" name="c_id" placeholder=" Case ID"/>
                             </div>
                         </div>
                         <div class="form-group row">
