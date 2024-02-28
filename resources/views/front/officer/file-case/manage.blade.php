@@ -20,6 +20,7 @@
                             </button>
                         </div>
                     @endif
+
                     <table class="table table-striped table-bordered table-hover" id="example-table" cellspacing="0" width="100%">
                         <thead>
                         <tr>
@@ -48,6 +49,9 @@
                                 <td>
                                     <a href="{{route('edit-case', ['id' => $case->id])}}" class="btn btn-success btn-xs">
                                         <i class="fa fa-edit"></i>
+                                    </a>
+                                    <a href="{{route('dismiss', ['id' => $case->id])}}" class="btn btn-warning btn-xs">
+                                        <i class="fa fa-paper-plane"></i>
                                     </a>
                                     {{--<a href="" class="btn btn-danger btn-xs" onclick="event.preventDefault(); document.getElementById('caseDeleteForm{{$case->id}}').submit();">--}}
                                         {{--<i class="fa fa-trash"></i>--}}

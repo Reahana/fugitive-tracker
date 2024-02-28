@@ -5,14 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\CaseFile;
 use App\Models\Citizen;
 use App\Models\Law;
+use App\Models\Officer;
 use Illuminate\Http\Request;
 
 class CaseFileController extends Controller
 {
-    private $name , $law;
+    private $name , $law , $area;
     public function  index()
     {
-        return view('front.officer.file-case.add',['citizens'=>Citizen::all(),'laws'=>Law::all()]);
+        $this->area = Officer::where('p_id',auth()->user()->p_id)->get('posting');
+
+        return view('front.officer.file-case.add',['citizens'=>Citizen::all(),'laws'=>Law::all(),'areas'=>$this->area]);
     }
     public function getName()
     {

@@ -94,6 +94,15 @@
                         </div>
 
                         <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Area</label>
+                            <div class="col-sm-10">
+                                @foreach($areas as $area)
+                                <input class="form-control" value="{{$area->posting}}" type="text" name="area" placeholder="Contact Number"/>
+                           @endforeach
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <div class="col-sm-10 ml-sm-auto">
                                 <button class="btn btn-info btn-block" type="submit">File New Case</button>
                             </div>

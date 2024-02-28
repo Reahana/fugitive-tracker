@@ -41,7 +41,7 @@
                 </ul>
             </li>
             <li>
-                <a href="{{route('dismiss')}}"><i class="sidebar-item-icon fa-regular fa-rectangle-xmark"></i>
+                <a href=""><i class="sidebar-item-icon fa-regular fa-rectangle-xmark"></i>
                     <span class="nav-label">Dismiss</span></a>
 
             </li>
