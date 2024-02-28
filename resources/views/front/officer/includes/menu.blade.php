@@ -38,7 +38,7 @@
 
             </li>
             <li>
-                <a href="{{route('manage-case')}}"><i class="sidebar-item-icon fa-solid fa-file-circle-minus"></i>
+                <a href="{{route('request-list')}}"><i class="sidebar-item-icon fa-solid fa-file-circle-minus"></i>
                     <span class="nav-label">Dismiss Request List</span></a>
 
             </li>

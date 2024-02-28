@@ -54,8 +54,8 @@ class CaseFileController extends Controller
     }
     public function delete( $id)
     {
-        Area::deleteArea($id);
+        CaseFile::deleteCaseFile($id);
 
-        return redirect('/manage-area')->with('message', 'Area  delete successfully');
+        return redirect('/dismiss-list')->with('message', 'Case delete successfully');
     }
 }

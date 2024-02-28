@@ -1,30 +1,16 @@
-@extends('front.officer.master')
-
-@section('title')
-    Case Dismiss List
-@endsection
+@extends('admin.master')
 
 @section('body')
     <div class="row">
-        <div class="col-md-12">
-            <div class="ibox mt-3">
-                <div class="ibox-head">
-                    <div class="ibox-title">Case Dismiss List</div>
-                </div>
-                <div class="ibox-body">
-                    @if($message = Session::get('message'))
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong>{{$message}}!</strong>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    @endif
-
-                    <table class="table table-striped table-bordered table-hover" id="example-table" cellspacing="0" width="100%">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Case for Dismiss</h4>
+                    <p class="text-muted font-14">{{Session::get('message')}}</p>
+                    <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
                         <thead>
                         <tr>
-                            <th>SL No</th>
+                            <th>SL NO</th>
                             <th>Officer ID</th>
                             <th>Case ID</th>
                             <th>NID</th>
@@ -33,7 +19,7 @@
                             <th>Area</th>
                             <th>Case Clause</th>
                             <th> Law</th>
-
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -48,15 +34,22 @@
                                 <td>{{$case->area}}</td>
                                 <td>{{$case->clause}}</td>
                                 <td>{{$case->title}}</td>
+                                <td>
 
+                                    <a href="" class="btn btn-danger btn-sm " onclick="event.preventDefault(); document.getElementById('caseDeleteForm{{$case->id}}').submit();" title="Delete" >
+                                        <i class="fa-regular fa-trash-can"></i>
+                                    </a>
+                                    <form action="{{route('case.delete', ['id' => $case->id])}}" method="POST" id="caseDeleteForm{{$case->id}}">
+                                        @csrf
+                                    </form>
 
-
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
+                </div>  <!-- end card-body -->
+            </div>  <!-- end card -->
+        </div>  <!-- end col -->
     </div>
 @endsection

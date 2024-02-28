@@ -82,7 +82,7 @@ Route::middleware('is_officer')->group(function (){
     Route::get('/manage-case',[CaseFileController::class, 'manage'])->name('manage-case');
     Route::get('/edit-case/{id}',[CaseFileController::class, 'edit'])->name('edit-case');
     Route::post('/update-case/{id}', [CaseFileController::class, 'update'])->name('case.update');
-//    Route::post('/delete-case/{id}', [CaseFileController::class, 'delete'])->name('case.delete');
+
 
     Route::get('/get-name-by-nid', [CaseFileController::class,'getName'])->name('nid.get-name');
     Route::get('/get-law-by-clause', [CaseFileController::class,'getLaw'])->name('nid.get-law');
@@ -91,8 +91,10 @@ Route::middleware('is_officer')->group(function (){
 });
 
 Route::get('/case-dismiss/{id}',[CaseDismissController::class, 'index'])->name('dismiss');
-Route::post('/request-dismiss/{id}',[CaseDismissController::class,'requestDismiss'])->name('request-dismiss');
-
+Route::post('/request-dismiss',[CaseDismissController::class,'requestDismiss'])->name('request-dismiss');
+Route::get('/request-list',[CaseDismissController::class, 'requestList'])->name('request-list');
+Route::get('/dismiss-list',[CaseDismissController::class, 'viewDismissList'])->name('dismiss-list');
+Route::post('/delete-case/{id}', [CaseFileController::class, 'delete'])->name('case.delete');
 
 
 

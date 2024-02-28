@@ -9,6 +9,8 @@ class CaseFile extends Model
 {
     use HasFactory;
 
+
+
     private static $caseFile;
 
     public  static  function newCaseFile($request)
@@ -44,11 +46,15 @@ class CaseFile extends Model
 
 
     }
-    public static function deleteLaw($id)
+    public static function deleteCaseFile($id)
     {
         self::$caseFile = CaseFile::find($id);
 
         self::$caseFile->Delete();
     }
+    public function dismiss()
+    {
 
+        return $this->belongsTo('App\Model\Dismiss');
+    }
 }
