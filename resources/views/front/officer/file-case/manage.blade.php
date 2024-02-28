@@ -28,7 +28,8 @@
                             <th>Case ID</th>
                             <th>NID</th>
                             <th>Name</th>
-                            <th>Contact</th>
+                            <th>Contact
+                            <th>Area</th>
                             <th>Case Clause</th>
                             <th> Law</th>
                             <th>Action</th>
@@ -41,7 +42,8 @@
                                 <td>{{$case->c_id}}</td>
                                 <td>{{$case->nid}}</td>
                                 <td>{{$case->name}}</td>
-                                <td>{{$case->contact}}</td>
+                                <td>{{$case->contact}}
+                                <td>{{$case->area}}</td>
                                 <td>{{$case->clause}}</td>
                                 <td>{{$case->title}}</td>
 
