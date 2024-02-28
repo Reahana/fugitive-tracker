@@ -27,7 +27,7 @@
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label"> Officer ID</label>
                             <div class="col-sm-10">
-                                <input class="form-control"  type="number" name="p_id" value="{{auth()->user()->p_id}}" disabled placeholder=" Case ID"/>
+                                <input class="form-control"  type="number" name="p_id" value="{{auth()->user()->p_id}}"  placeholder=" Case ID"/>
 
                             </div>
                         </div>
@@ -97,7 +97,7 @@
                             <label class="col-sm-2 col-form-label">Area</label>
                             <div class="col-sm-10">
                                 @foreach($areas as $area)
-                                <input class="form-control" value="{{$area->posting}}" type="text" name="area" placeholder="Area" disabled/>
+                                <input class="form-control" value="{{$area->posting}}" type="text" name="area" placeholder="Area" />
                            @endforeach
                             </div>
                         </div>

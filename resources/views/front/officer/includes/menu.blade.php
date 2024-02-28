@@ -28,21 +28,13 @@
                 </ul>
             </li>
             <li>
-                <a href="javascript:;"><i class="sidebar-item-icon fa-solid fa-handcuffs"></i>
-                    <span class="nav-label">File Case</span><i class="fa fa-angle-left arrow"></i></a>
-                <ul class="nav-2-level collapse">
-                    <li>
-                        <a href="{{route('add-case')}}">Add Case</a>
-                    </li>
-                    <li>
-                        <a href="{{route('manage-case')}}"> Manage Case</a>
-                    </li>
+                <a href="{{route('add-case')}}"><i class="sidebar-item-icon fa-solid fa-handcuffs"></i>
+                    <span class="nav-label">File Case</span></a>
 
-                </ul>
             </li>
             <li>
-                <a href=""><i class="sidebar-item-icon fa-regular fa-rectangle-xmark"></i>
-                    <span class="nav-label">Dismiss</span></a>
+                <a href="{{route('manage-case')}}"><i class="sidebar-item-icon fa-solid fa-list-check"></i>
+                    <span class="nav-label">Manage Case</span></a>
 
             </li>
 
