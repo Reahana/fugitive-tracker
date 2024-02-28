@@ -90,7 +90,7 @@ Route::middleware('is_officer')->group(function (){
 
 });
 
-Route::get('/case-dismiss/{id}',[CaseDismissController::class, 'edit'])->name('dismiss');
+Route::get('/case-dismiss/{id}',[CaseDismissController::class, 'index'])->name('dismiss');
 Route::post('/request-dismiss/{id}',[CaseDismissController::class,'requestDismiss'])->name('request-dismiss');
 
 
