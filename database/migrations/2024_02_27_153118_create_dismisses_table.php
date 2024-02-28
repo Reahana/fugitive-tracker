@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('p_id');
             $table->integer('c_id')->unique();
-            $table->string('comment');
+            $table->string('comment')->nullable();
             $table->timestamps();
         });
     }

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('contact')->nullable();
             $table->string('clause');
             $table->string('title');
+            $table->string('area');
             $table->timestamps();
         });
     }
