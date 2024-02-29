@@ -52,7 +52,7 @@
                                     <a href="{{route('edit-case', ['id' => $case->id])}}" class="btn btn-success btn-xs" title="Edit">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <a href="{{route('dismiss', ['id' => $case->id])}}" class="btn btn-warning btn-xs" title="Dismiss-Request">
+                                    <a href="{{route('dismiss-form', ['id' => $case->id])}}" class="btn btn-warning btn-xs" title="Dismiss-Request">
                                         <i class="fa fa-paper-plane"></i>
                                     </a>
                                     {{--<a href="" class="btn btn-danger btn-xs" onclick="event.preventDefault(); document.getElementById('caseDeleteForm{{$case->id}}').submit();">--}}

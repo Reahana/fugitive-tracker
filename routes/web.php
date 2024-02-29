@@ -83,29 +83,24 @@ Route::middleware('is_officer')->group(function (){
     Route::get('/edit-case/{id}',[CaseFileController::class, 'edit'])->name('edit-case');
     Route::post('/update-case/{id}', [CaseFileController::class, 'update'])->name('case.update');
 
-
+//== select option for case file ===////
     Route::get('/get-name-by-nid', [CaseFileController::class,'getName'])->name('nid.get-name');
     Route::get('/get-law-by-clause', [CaseFileController::class,'getLaw'])->name('nid.get-law');
 
-
+    // ===== Case Dismiss Request
+    Route::get('/dismiss-form/{id}',[CaseDismissController::class, 'index'])->name('dismiss-form');
+    Route::post('/request-dismiss',[CaseDismissController::class,'requestDismiss'])->name('request-dismiss');
+    Route::get('/request-list',[CaseDismissController::class, 'requestList'])->name('request-list');
 });
 
-Route::get('/case-dismiss/{id}',[CaseDismissController::class, 'index'])->name('dismiss');
-Route::post('/request-dismiss',[CaseDismissController::class,'requestDismiss'])->name('request-dismiss');
-Route::get('/request-list',[CaseDismissController::class, 'requestList'])->name('request-list');
+
+
+
 Route::get('/dismiss-list',[CaseDismissController::class, 'viewDismissList'])->name('dismiss-list');
 Route::post('/delete-case/{id}', [CaseFileController::class, 'delete'])->name('case.delete');
 
-
-
-
-//Route::get('/', [HomeController::class, 'index']);
-Route::get('/post/add', [PostController::class, 'index'])->name('post.add')->middleware('roles');
-Route::post('/post/new', [PostController::class, 'create'])->name('post.new');
-Route::get('/post/manage', [PostController::class, 'manage'])->name('post.manage');
-Route::get('/post/edit/{id}', [PostController::class, 'edit'])->name('post.edit');
-Route::post('/post/update/{id}', [PostController::class, 'edit'])->name('post.update');
-Route::post('/post/delete/{id}', [PostController::class, 'delete'])->name('post.delete');
+//====================================================//
+//============= Admin Section =====================//
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware(['auth:sanctum', 'verified','is_register']);
 Route::middleware([ 'auth:sanctum',  config('jetstream.auth_session'), 'verified','is_admin'])->group(function () {
