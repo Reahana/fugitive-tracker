@@ -30,19 +30,16 @@ class CaseDismissController extends Controller
     {
         $this->req = CaseFile::join('dismisses', 'dismisses.c_id', '=','case_files.c_id')
         ->get('*');
-       // $this->req = Dismiss::select('c_id')->get();
-        //$this->cases = CaseFile::where('c_id',Dismiss::select('c_id')->get())->get('*');
-      //  $this->cases = CaseFile::where('c_id',$this->req->c_id)->get('*');
 
         return view('front.officer.dismiss-case.request-list',['cases' => $this->req]);
     }
-public  function  viewDismissList ()
-{
-    $this->req = Dismiss::join('case_files', 'case_files.c_id', '=','dismisses.c_id')
+    public  function  viewDismissList ()
+    {
+        $this->req = Dismiss::join('case_files', 'case_files.c_id', '=','dismisses.c_id')
         ->get('*');
-    return view('admin.dismiss-case.case-list',['cases' => $this->req]);
+        return view('admin.dismiss-case.case-list',['cases' => $this->req]);
 
-}
+    }
 
 
 }
