@@ -27,12 +27,11 @@
         <ul class="nav navbar-toolbar">
             <li class="dropdown dropdown-user">
                 <a class="nav-link dropdown-toggle link" data-toggle="dropdown">
-                    @if(auth()->user()->role_id== 1)
 
                         <img  src="{{asset($officer->image)}}"   />
-                    @endif
+
                     {{--<img src="{{asset('/')}}officer-images" />--}}
-                    <span></span>{{auth()->user()->name}}<i class="fa fa-angle-down m-l-5"></i></a>
+                    <span></span>Officer<i class="fa fa-angle-down m-l-5"></i></a>
                 <ul class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="javascript:;"><i class="fa fa-support"></i>Change Password</a>
                     <a class="dropdown-item" href="" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
