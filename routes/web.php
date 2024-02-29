@@ -96,8 +96,6 @@ Route::middleware('is_officer')->group(function (){
 
 
 
-Route::get('/dismiss-list',[CaseDismissController::class, 'viewDismissList'])->name('dismiss-list');
-Route::post('/delete-case/{id}', [CaseFileController::class, 'delete'])->name('case.delete');
 
 //====================================================//
 //============= Admin Section =====================//
@@ -154,6 +152,8 @@ Route::middleware([ 'auth:sanctum',  config('jetstream.auth_session'), 'verified
     Route::post('/update-law/{id}', [LawListController::class, 'update'])->name('law.update');
     Route::post('/delete-law/{id}', [LawListController::class, 'delete'])->name('law.delete');
 
-//========
+//======== Dismiss/Delete Case
+    Route::get('/dismiss-list',[CaseDismissController::class, 'viewDismissList'])->name('dismiss-list');
+    Route::post('/delete-case/{id}', [CaseFileController::class, 'delete'])->name('case.delete');
 
 });
