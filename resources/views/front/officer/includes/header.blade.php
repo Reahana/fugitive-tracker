@@ -25,42 +25,17 @@
         <!-- END TOP-LEFT TOOLBAR-->
         <!-- START TOP-RIGHT TOOLBAR-->
         <ul class="nav navbar-toolbar">
-            <li class="dropdown dropdown-inbox">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope-o"></i>
-                    <span class="badge badge-primary envelope-badge">9</span>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-right dropdown-menu-media">
-                    <li class="dropdown-menu-header">
-                        <div>
-                            <span><strong>9 New</strong> Messages</span>
-                            <a class="pull-right" href="mailbox.html">view all</a>
-                        </div>
-                    </li>
-
-                </ul>
-            </li>
-            <li class="dropdown dropdown-notification">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell-o rel"><span class="notify-signal"></span></i></a>
-                <ul class="dropdown-menu dropdown-menu-right dropdown-menu-media">
-                    <li class="dropdown-menu-header">
-                        <div>
-                            <span><strong>5 New</strong> Notifications</span>
-                            <a class="pull-right" href="javascript:;">view all</a>
-                        </div>
-                    </li>
-
-                </ul>
-            </li>
             <li class="dropdown dropdown-user">
                 <a class="nav-link dropdown-toggle link" data-toggle="dropdown">
-                    <img src="{{asset('/')}}assets/img/admin-avatar.png" />
-                    <span></span>Admin<i class="fa fa-angle-down m-l-5"></i></a>
+                    @if(auth()->user()->role_id== 1)
+
+                        <img  src="{{asset($officer->image)}}"   />
+                    @endif
+                    {{--<img src="{{asset('/')}}officer-images" />--}}
+                    <span></span>{{auth()->user()->name}}<i class="fa fa-angle-down m-l-5"></i></a>
                 <ul class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="profile.html"><i class="fa fa-user"></i>Profile</a>
-                    <a class="dropdown-item" href="profile.html"><i class="fa fa-cog"></i>Settings</a>
-                    <a class="dropdown-item" href="javascript:;"><i class="fa fa-support"></i>Support</a>
-                    <li class="dropdown-divider"></li>
-                    <a class="dropdown-item" href="login.html" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
+                    <a class="dropdown-item" href="javascript:;"><i class="fa fa-support"></i>Change Password</a>
+                    <a class="dropdown-item" href="" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
                         <i class="fa fa-power-off"></i>Logout</a>
                     <form action="{{route('logout')}}" method="POST" id="logoutForm">
                         @csrf
