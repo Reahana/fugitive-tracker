@@ -78,6 +78,36 @@ class Officer extends Model
 
 
     }
+
+    public static function updateOfficerSelf($request, $id)
+    {
+        self::$officer = Officer::find($id);
+
+        self::$image = $request->file('image');
+
+        if(self::$image)
+        {
+
+            if(file_exists(self::$officer->image))
+            {
+                unlink(self::$officer->image);
+            }
+            self::$imageUrl = self::getImageUrl($request);
+        }
+        else
+        {
+            self::$imageUrl = self::$officer->image;
+
+        }
+
+        self::$officer->number      = $request->number;
+        self::$officer->image      = self::$imageUrl;
+        self::$officer->save();
+
+
+    }
+
+
     public static function deleteOfficer($id)
     {
         self::$officer = Officer::find($id);

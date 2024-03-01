@@ -35,7 +35,7 @@ class OfficerController extends Controller
     public function update(Request $request, $id)
     {
         Officer::updateOfficer($request,$id);
-        ;
+
 
         return redirect('/manage-officer')->with('message', 'Officer info update successfully');
     }

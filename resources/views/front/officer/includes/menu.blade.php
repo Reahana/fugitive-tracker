@@ -19,10 +19,10 @@
                     <span class="nav-label">Profile</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a href="">View</a>
+                        <a href="{{route('view-profile')}}">View</a>
                     </li>
                     <li>
-                        <a href="">Edit</a>
+                        <a href="{{route('edit-profile')}}">Edit</a>
                     </li>
 
                 </ul>

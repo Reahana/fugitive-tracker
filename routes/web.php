@@ -19,6 +19,7 @@ use App\Http\Controllers\OfficerController;
 use App\Http\Controllers\CaseFileController;
 use App\Http\Controllers\CheckStatusController;
 use App\Http\Controllers\CaseDismissController;
+use App\Http\Controllers\OfficerProfileController;
 
 use App\Models\RoleRoute;
 
@@ -75,6 +76,11 @@ Route::middleware('is_officer')->group(function (){
 
     // Dashboard of Officers
     Route::get('/officers-dashboard',[OfficerDashboardController::class, 'index'])->name('officers-dashboard');
+
+    // Profile
+    Route::get('/view-profile',[OfficerProfileController::class,'index'])->name('view-profile');
+    Route::get('/edit-profile',[OfficerProfileController::class,'edit'])->name('edit-profile');
+    Route::post('/update-profile/{id}', [OfficerProfileController::class, 'update'])->name('update-profile');
 
     // ==== Case file ====
     Route::get('/add-case',[CaseFileController::class,'index'])->name('add-case');

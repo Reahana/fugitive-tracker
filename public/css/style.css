@@ -105,6 +105,7 @@ font-size: 50px;
   }
   .fine-page{
     background-color: #FEFFDD;
+  background-image: linear-gradient(to  left ,#FFF67E, #FEFFDD);
     min-height: 76vh;
   }
 .check-status {

@@ -25,7 +25,7 @@
     </div>
     <div class="page-content fade-in-up">
         <div class="row">
-            <div class="col-lg-8 col-md-8">
+            <div class="col-lg-5 col-md-8">
                 <div class="ibox">
                     <div class="ibox-body text-center">
                         <div class="m-t-20">
@@ -45,7 +45,25 @@
                     </div>
                 </div>
             </div>
-            {{--<div class="col-lg-9 col-md-7"></div>--}}
+            <div class="col-lg-7 col-md-7">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="ibox">
+                            <div class="ibox-body">
+                              Total Case Filed {{$cases}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="ibox">
+                            <div class="ibox-body">
+                                Dismiss Case {{$dismiss}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
             @endforeach
         </div><!-- row    -->
     </div><!-- content -->
