@@ -13,7 +13,7 @@
                 </button>
             </div>
         @endif
-        <h1 class="page-title">Welcome
+        <h1 class="page-title">Welcome Officer
             {{auth()->user()->name}}
         </h1>
         <ol class="breadcrumb">
@@ -32,16 +32,10 @@
                             @foreach($officers as $officer )
                                 <img class="img-circle" src="{{asset($officer->image)}}" alt="" height="100" />
                         </div> {{--photo--}}
-                        <h4 class="font-strong m-b-10 m-t-10">{{ $officer->name }} </h4>
-                        <h5 class="m-b-20 text-muted"><b>{{ $officer->rank }} </b>
-
-                        </h5>
-                        <div class="profile-social m-b-20" style="font-size:30px">
-                            {{--<a href="javascript:;"><i class="fab fa-twitter"></i></a>--}}
-                            <a href="" target="_blank"><i class="fab fa-facebook"></i></a>
-                            <a href="tel:{{$officer->number}}"><span title="{{$officer->number}}"><i class="fas fa-mobile-alt"></i></span></a>
-                            <a href="mailto:{{$officer->email}}"><span title="{{$officer->email}}"><i  class="fas fa-envelope"></i></span></a>
-                        </div> {{--links--}}
+                        <h2 class="font-strong m-b-10 m-t-10">{{ $officer->name }} </h2>
+                        <h3 class="m-b-20 text-muted"><b>{{ $officer->rank }} </b></h3>
+                        <h4 class="m-b-20 m-t-10  "><i class="fas fa-location-dot text-primary"></i> Posting: {{$officer->posting}}</h4>
+                        <h4 class="font-strong m-b-20"><i class="fas fa-mobile-alt text-info"></i> {{$officer->number}}</h4>
                     </div>
                 </div>
             </div>
@@ -49,15 +43,25 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="ibox">
-                            <div class="ibox-body">
-                              Total Case Filed {{$cases}}
+                            <div class="ibox-body text-center">
+                                <div class="m-t-20">
+                                    <h1 class="text-danger"><i class="fa-solid fa-handcuffs "></i></h1>
+                                    <h3>Filed Case:</h3>
+                                    <h3>
+                                      {{$case + $dismiss}}
+                                    </h3>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="ibox">
-                            <div class="ibox-body">
-                                Dismiss Case {{$dismiss}}
+                            <div class="ibox-body text-center">
+                                <div class="m-t-20">
+                                   <h1 class="text-success font-weight-bold"> <i class="fa-solid fa-scale-balanced"></i></h1>
+                                    <h3>  Dismissed Case:</h3>
+                                    <h3>{{$dismiss}}</h3>
+                                </div>
                             </div>
                         </div>
                     </div>

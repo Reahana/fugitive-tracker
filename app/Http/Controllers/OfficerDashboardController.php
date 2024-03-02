@@ -18,7 +18,7 @@ class OfficerDashboardController extends Controller
         $this->officers =Officer::where('p_id',Auth::user()->p_id)->select('*')->get();
         return view('front.officer.dashboard.dashboard',
             ['officers'=>$this->officers,
-                'cases'=>$this->cases,
+                'case'=>$this->cases,
                 'dismiss'=>$this->dismiss ]);
     }
 }
