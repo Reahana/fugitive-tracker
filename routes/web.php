@@ -69,7 +69,7 @@ Route::get('/search',[CheckStatusController::class, 'search'])->name('search');
 //======= Officer section ===== ///
 
 // Log in page of officers
-Route::get('/login-page',[LoginController::class, 'index'])->name('login-page');
+Route::get('/signin',[LoginController::class, 'index'])->name('login-page');
 Route::post('/officer-login',[LoginController::class, 'officer'])->name('officer-login');
 
 Route::middleware('is_officer')->group(function (){

@@ -15,8 +15,10 @@ class OfficerDashboardController extends Controller
     {
         $this->dismiss = Dismiss::where('p_id', Auth::user()->p_id)->count();
      $this->cases = CaseFile::where('p_id',Auth::user()->p_id)->count();
-        $this->officers =Officer::where('p_id',Auth::user()->p_id)->get();
+        $this->officers =Officer::where('p_id',Auth::user()->p_id)->select('*')->get();
         return view('front.officer.dashboard.dashboard',
-            ['officers'=>$this->officers, 'cases'=>$this->cases, 'dismiss'=>$this->dismiss ]);
+            ['officers'=>$this->officers,
+                'cases'=>$this->cases,
+                'dismiss'=>$this->dismiss ]);
     }
 }

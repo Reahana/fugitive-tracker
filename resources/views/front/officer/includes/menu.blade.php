@@ -2,7 +2,9 @@
     <div id="sidebar-collapse">
         <div class="admin-block d-flex">
             <div>
+                @foreach($officers as $officer)
                 <img class="img-circle" src="{{asset($officer->image)}}"width="45px" />
+            @endforeach
             </div>
             <div class="admin-info">
                 <div class="font-strong">{{auth()->user()->name}}</div><small>Officer</small></div>

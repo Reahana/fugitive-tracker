@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 class CaseDismissController extends Controller
 
 {
-    private $req, $cases;
+    private $req, $cases, $officer;
     public function index($id)
     {
         return view('front.officer.dismiss-case.form', ['case' => CaseFile::find($id), 'citizens' => Citizen::all(), 'laws' => Law::all()]);
@@ -27,11 +27,11 @@ class CaseDismissController extends Controller
     }
 
     public function requestList()
-    {
+    {$this->officer = Officer::where('p_id',Auth::user()->p_id)->get('*');
         $this->req = CaseFile::join('dismisses', 'dismisses.c_id', '=','case_files.c_id')
         ->get('*');
 
-        return view('front.officer.dismiss-case.request-list',['cases' => $this->req]);
+        return view('front.officer.dismiss-case.request-list',['cases' => $this->req, 'officers'=>$this->officer]);
     }
     public  function  viewDismissList ()
     {

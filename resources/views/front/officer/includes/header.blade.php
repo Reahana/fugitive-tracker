@@ -27,9 +27,9 @@
         <ul class="nav navbar-toolbar">
             <li class="dropdown dropdown-user">
                 <a class="nav-link dropdown-toggle link" data-toggle="dropdown">
-
+@foreach($officers as $officer)
                         <img  src="{{asset($officer->image)}}"   />
-
+@endforeach
                     {{--<img src="{{asset('/')}}officer-images" />--}}
                     <span></span>Officer<i class="fa fa-angle-down m-l-5"></i></a>
                 <ul class="dropdown-menu dropdown-menu-right">

@@ -7,15 +7,22 @@ use App\Models\Citizen;
 use App\Models\Law;
 use App\Models\Officer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CaseFileController extends Controller
 {
     private $name , $law , $area;
     public function  index()
     {
+
         $this->area = Officer::where('p_id',auth()->user()->p_id)->get('posting');
 
-        return view('front.officer.file-case.add',['citizens'=>Citizen::all(),'laws'=>Law::all(),'areas'=>$this->area]);
+        return view('front.officer.file-case.add'
+            ,['citizens'=>Citizen::all(),
+                'laws'=>Law::all(),
+                'areas'=>$this->area,
+                'officers'=>Officer::where('p_id',Auth::user()->p_id)
+            ->select('*')->get()]);
     }
     public function getName()
     {
@@ -39,12 +46,21 @@ class CaseFileController extends Controller
 
     public function manage ()
     {
-        return view('front.officer.file-case.manage',['cases' => CaseFile::orderBy('id')->get()]);
+        return view('front.officer.file-case.manage',
+            ['cases' => CaseFile::where('p_id',Auth::user()->p_id)
+        ->orderBy('id')->get(),
+                'officers'=>Officer::where('p_id',Auth::user()->p_id)
+                    ->select('*')->get()]);
     }
 
     public function edit($id)
     {
-        return view('front.officer.file-case.edit',['case' => CaseFile::find($id) ,'citizens'=>Citizen::all(),'laws'=>Law::all()]);
+        return view('front.officer.file-case.edit',
+            ['case' => CaseFile::find($id) ,
+                'citizens'=>Citizen::all(),
+                'laws'=>Law::all(),
+                'officers'=>Officer::where('p_id',Auth::user()->p_id)
+                    ->select('*')->get()]);
     }
     public function update(Request $request, $id)
     {
