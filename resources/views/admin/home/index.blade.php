@@ -35,8 +35,9 @@
                             <div class="float-end">
                                 <i class="mdi mdi-account-multiple widget-icon"></i>
                             </div>
-                            <h5 class="text-muted fw-bold fs-3 mt-0" title="Number of Citizens">Citizens</h5>
-                            <h3 class="mt-3 mb-3">{{$citizen}}</h3>
+                            <h1><i class="fa-solid fa-people-group"></i></h1>
+                            <h5 class="text-muted fw-bold fs-3 mt-0" title="Number of Citizens">Citizens: {{$citizen}}</h5>
+                            {{--<h3 class="mt-3 mb-3">{{$citizen}}</h3>--}}
                         </div> <!-- end card-body-->
                     </div> <!-- end card-->
                 </div> <!-- end col-->
@@ -47,12 +48,9 @@
                             <div class="float-end">
                                 <i class="mdi mdi-cart-plus widget-icon"></i>
                             </div>
-                            <h5 class="text-muted fw-normal mt-0" title="Number of Orders">Officers</h5>
-                            <h3 class="mt-3 mb-3">{{$officer}}</h3>
-                            <p class="mb-0 text-muted">
-                                <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> 1.08%</span>
-                                <span class="text-nowrap">Since last month</span>
-                            </p>
+                            <h1><i class="fa-solid fa-user-secret"></i></h1>
+                            <h5 class="text-muted fw-bold fs-3 mt-0" title="Number of Orders">Officers: {{$officer}} </h5>
+                            {{--<h3 class="mt-3 mb-3"></h3>--}}
                         </div> <!-- end card-body-->
                     </div> <!-- end card-->
                 </div> <!-- end col-->
@@ -65,12 +63,9 @@
                             <div class="float-end">
                                 <i class="mdi mdi-currency-usd widget-icon"></i>
                             </div>
-                            <h5 class="text-muted fw-normal mt-0" title="Average Revenue"> Case Filed</h5>
-                            <h3 class="mt-3 mb-3">{{$case}}</h3>
-                            <p class="mb-0 text-muted">
-                                <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> 7.00%</span>
-                                <span class="text-nowrap">Since last month</span>
-                            </p>
+                            <h1><i class="fa-solid fa-handcuffs"></i></h1>
+                            <h5 class="text-muted fw-bold fs-3 mt-0" title="Average Revenue"> Case Filed : {{$case +$dismiss}}</h5>
+                            {{--<h3 class="mt-3 mb-3"></h3>--}}
                         </div> <!-- end card-body-->
                     </div> <!-- end card-->
                 </div> <!-- end col-->
@@ -81,12 +76,9 @@
                             <div class="float-end">
                                 <i class="mdi mdi-pulse widget-icon"></i>
                             </div>
-                            <h5 class="text-muted fw-normal mt-0" title="Growth">Dismiss Case</h5>
-                            <h3 class="mt-3 mb-3">+ 30.56%</h3>
-                            <p class="mb-0 text-muted">
-                                <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 4.87%</span>
-                                <span class="text-nowrap">Since last month</span>
-                            </p>
+                            <h1><i class="fa-solid fa-scale-balanced"></i></h1>
+                            <h5 class="text-muted fw-bold fs-3 mt-0" title="Growth">Dismiss Case : {{$dismiss}}</h5>
+                            {{--<h3 class="mt-3 mb-3"></h3>--}}
                         </div> <!-- end card-body-->
                     </div> <!-- end card-->
                 </div> <!-- end col-->
@@ -96,8 +88,8 @@
 
         <div class="col-xl-7 col-lg-8">
             <div class="card card-h-100">
-                <div class=" card-header ">
-                    <img src="{{asset('/')}}admin/assets/images/map.png" alt="" width="100%">
+                <div class="d-flex card-header align-items-center justify-content-center">
+                    <img src="{{asset('/')}}admin/assets/images/map.png" alt="" width="100%" >
                     {{--<h4 class="header-title">Projections Vs Actuals</h4>--}}
                     {{--<div class="dropdown">--}}
                         {{--<a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">--}}
