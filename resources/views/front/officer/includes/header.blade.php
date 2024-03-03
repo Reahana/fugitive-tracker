@@ -33,7 +33,7 @@
                     {{--<img src="{{asset('/')}}officer-images" />--}}
                     <span></span>Officer<i class="fa fa-angle-down m-l-5"></i></a>
                 <ul class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="javascript:;"><i class="fa-solid fa-key"></i> Password</a>
+                    <a class="dropdown-item" href="{{route('change-password')}}"><i class="fa-solid fa-key"></i> Password</a>
                     <a class="dropdown-item" href="" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
                         <i class="fa fa-power-off"></i>Logout</a>
                     <form action="{{route('logout')}}" method="POST" id="logoutForm">

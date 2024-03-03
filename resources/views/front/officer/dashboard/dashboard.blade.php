@@ -32,10 +32,10 @@
                             @foreach($officers as $officer )
                                 <img class="img-circle" src="{{asset($officer->image)}}" alt="" height="100" />
                         </div> {{--photo--}}
-                        <h2 class="font-strong m-b-10 m-t-10">{{ $officer->name }} </h2>
-                        <h3 class="m-b-20 text-muted"><b>{{ $officer->rank }} </b></h3>
-                        <h4 class="m-b-20 m-t-10  "><i class="fas fa-location-dot text-primary"></i> Posting: {{$officer->posting}}</h4>
-                        <h4 class="font-strong m-b-20"><i class="fas fa-mobile-alt text-info"></i> {{$officer->number}}</h4>
+                        <h3 class="font-strong m-b-10 m-t-10">{{ $officer->name }} </h3>
+                        <h4 class="m-b-20 text-muted"><b>{{ $officer->rank }} </b></h4>
+                        <h5 class="m-b-20 m-t-10  "><i class="fas fa-location-dot text-primary"></i> Posting: {{$officer->posting}}</h5>
+                        <h5 class="font-strong m-b-20"><i class="fas fa-mobile-alt text-info"></i> {{$officer->number}}</h5>
                     </div>
                 </div>
             </div>

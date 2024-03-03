@@ -20,6 +20,7 @@ use App\Http\Controllers\CaseFileController;
 use App\Http\Controllers\CheckStatusController;
 use App\Http\Controllers\CaseDismissController;
 use App\Http\Controllers\OfficerProfileController;
+use App\Http\Controllers\PasswordController;
 
 use App\Models\RoleRoute;
 
@@ -99,8 +100,13 @@ Route::middleware('is_officer')->group(function (){
     Route::get('/request-list',[CaseDismissController::class, 'requestList'])->name('request-list');
 });
 
-
-
+Route::get('/change-password',[PasswordController::class, 'index'])->name('change-password');
+Route::post('/new-password',[PasswordController::class, 'changePassword'])->name('new.password');
+//Route::get('',[
+//    'uses' => 'App\Http\Controllers\PasswordController@index',
+//    'as'        => 'change-password',
+//    'middleware' => 'is_admin_teacher_student_guest'
+//]);
 
 
 //====================================================//

@@ -6,6 +6,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
@@ -90,7 +92,19 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Models\Role', 'user_role', 'user_id', 'role_id');
     }
+    public  static function changePassword($request)
+    {
+//    self::$user = User::find($id);
+        self::$user =Auth::user();
+        $userPassword = self::$user ->password;
+        if (!Hash::check($request->old_password, $userPassword)) {
+            return back()->withErrors(['old_password'=>'password not match']);
+        }
 
+        self::$user->password = Hash::make($request->password);
+
+        self::$user->save();
+    }
     public static function updateUser($request, $id)
     {
         self::$user = User::find($id);
