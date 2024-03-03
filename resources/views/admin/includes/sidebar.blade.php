@@ -49,30 +49,6 @@
                 </a>
             </li>
 
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarEcommerce" aria-expanded="false"
-                   aria-controls="sidebarEcommerce" class="side-nav-link">
-                    <i class="uil-store"></i>
-                    <span> User Module </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarEcommerce">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="{{route('role.add')}}">Add Role</a>
-                        </li>
-                        <li>
-                            <a href="{{route('role.manage')}}">Manage Role</a>
-                        </li>
-                        <li>
-                            <a href="{{route('user.add')}}">Add User</a>
-                        </li>
-                        <li>
-                            <a href="{{route('user.manage')}}">Manage User</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
 
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail"
