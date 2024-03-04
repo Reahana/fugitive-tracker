@@ -1,5 +1,7 @@
 @extends('front.officer.master')
-
+@section('title')
+    Manage Area |
+@endsection
 @section('body')
     <div class="row">
         <div class="col-lg-12">
