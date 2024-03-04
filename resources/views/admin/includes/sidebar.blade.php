@@ -162,7 +162,25 @@
                     <span> Case Dismiss </span>
                 </a>
             </li>
-            
+
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#sidebarTasks" aria-expanded="false" aria-controls="sidebarTasks"
+                   class="side-nav-link">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span> Articles </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarTasks">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="apps-tasks.html">Add Article</a>
+                        </li>
+                        <li>
+                            <a href="apps-tasks-details.html">Manage Article</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
 
 
         </ul>
