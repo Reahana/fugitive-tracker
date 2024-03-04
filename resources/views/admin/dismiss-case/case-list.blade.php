@@ -1,5 +1,7 @@
 @extends('admin.master')
-
+@section('title')
+    Case for Dismiss List |
+@endsection
 @section('body')
     <div class="row">
         <div class="col-lg-12">
