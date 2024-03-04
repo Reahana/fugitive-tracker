@@ -1,5 +1,7 @@
 @extends('admin.master')
-
+@section('title')
+    Edit Law |
+@endsection
 @section('body')
 
     <div class="row">
