@@ -1,5 +1,7 @@
 @extends('admin.master')
-
+@section('title')
+    Manage Officer |
+@endsection
 @section('body')
     <div class="row">
         <div class="col-lg-12">
