@@ -115,7 +115,7 @@ Route::middleware('is_officer')->group(function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware(['auth:sanctum', 'verified','is_register']);
 Route::middleware([ 'auth:sanctum',  config('jetstream.auth_session'), 'verified','is_admin'])->group(function () {
-    
+
     Route::get('/user/add', [UserController::class, 'index', ])->name('user.add');
     Route::post('/user/new', [UserController::class, 'create'])->name('user.new');
     Route::get('/user/manage', [UserController::class, 'manage'])->name('user.manage');
