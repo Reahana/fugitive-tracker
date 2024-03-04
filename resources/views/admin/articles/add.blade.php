@@ -14,23 +14,36 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="inputEmail31" class="col-3 col-form-label">Area no</label>
+                            <label for="inputEmail31" class="col-3 col-form-label">Article No</label>
                             <div class="col-9">
-                                <input type="number" class="form-control" name="area_no" id="area_no" placeholder="Area no"/>
+                                <input type="number" class="form-control" name="article_no" id="article_no" placeholder="Article no"/>
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="inputEmail3" class="col-3 col-form-label">Area Name</label>
+                            <label for="inputEmail3" class="col-3 col-form-label">Author Name</label>
                             <div class="col-9">
-                                <input type="text" class="form-control" name="name" id="name" placeholder=" Area Name"/>
+                                <input type="text" class="form-control" name="author_name" id="author_name" placeholder=" Author"/>
                             </div>
                         </div>
+                        <div class="row mb-3">
+                            <label for="inputEmail3" class="col-3 col-form-label">Article Title</label>
+                            <div class="col-9">
+                                <input type="text" class="form-control" name="title" id="title" placeholder=" Title"/>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputEmail3" class="col-3 col-form-label">Article Body</label>
+                            <div class="col-9">
+                                <textarea name="body" placeholder=" Body" id="" cols="95" rows="5"></textarea>
+                            </div>
+                        </div>
+
 
 
 
                         <div class="justify-content-end row">
                             <div class="col-9">
-                                <button type="submit" class="btn btn-info">Add New Area</button>
+                                <button type="submit" class="btn btn-info">Add New Article</button>
                             </div>
                         </div>
                     </form>
