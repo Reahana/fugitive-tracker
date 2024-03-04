@@ -173,7 +173,7 @@
                 <div class="collapse" id="sidebarTasks">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="apps-tasks.html">Add Article</a>
+                            <a href="{{route('add-article')}}">Add Article</a>
                         </li>
                         <li>
                             <a href="apps-tasks-details.html">Manage Article</a>

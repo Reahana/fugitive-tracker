@@ -21,6 +21,7 @@ use App\Http\Controllers\CheckStatusController;
 use App\Http\Controllers\CaseDismissController;
 use App\Http\Controllers\OfficerProfileController;
 use App\Http\Controllers\PasswordController;
+use App\Http\Controllers\ArticleController;
 
 use App\Models\RoleRoute;
 
@@ -160,5 +161,14 @@ Route::middleware([ 'auth:sanctum',  config('jetstream.auth_session'), 'verified
 //======== Dismiss/Delete Case
     Route::get('/dismiss-list',[CaseDismissController::class, 'viewDismissList'])->name('dismiss-list');
     Route::post('/delete-case/{id}', [CaseFileController::class, 'delete'])->name('case.delete');
+
+    //======= Article section =====
+    Route::get('/add-article',[ArticleController::class,'index'])->name('add-article');
+    Route::post('/new-article', [ArticleController::class, 'create'])->name('article.new');
+    Route::get('/manage-article',[ArticleController::class, 'manage'])->name('manage-article');
+    Route::get('/edit-article/{id}',[ArticleController::class, 'edit'])->name('edit-article');
+    Route::post('/update-article/{id}', [ArticleController::class, 'update'])->name('article.update');
+    Route::post('/delete-article/{id}', [ArticleController::class, 'delete'])->name('article.delete');
+
 
 });
