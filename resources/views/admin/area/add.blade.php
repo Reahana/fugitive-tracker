@@ -1,5 +1,7 @@
 @extends('admin.master')
-
+@section('title')
+    Add Area |
+    @endsection
 @section('body')
 
     <div class="row">
