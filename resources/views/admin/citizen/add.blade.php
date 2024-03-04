@@ -1,12 +1,14 @@
 @extends('admin.master')
-
+@section('title')
+    Add Citizen NID |
+@endsection
 @section('body')
 
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="header-title">Add NID form</h4>
+                    <h4 class="header-title">Add Citizen NID form</h4>
                     <p class="text-muted font-14">{{Session::get('message')}}</p>
                     <form class="form-horizontal" action="{{route('nid.new')}}" method="POST" enctype="multipart/form-data">
                         @csrf
