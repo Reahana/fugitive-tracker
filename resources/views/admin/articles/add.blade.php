@@ -37,6 +37,13 @@
                                 <textarea name="body" placeholder=" Body" id="" cols="95" rows="5"></textarea>
                             </div>
                         </div>
+                        <div class="row mb-3">
+                            <label for="inputEmail34" class="col-3 col-form-label"> Image</label>
+                            <div class="col-9">
+                                <input type="file" class="form-control" name="image" id="inputEmail34" placeholder="Article Image"/>
+                            </div>
+                        </div>
+
 
 
 
