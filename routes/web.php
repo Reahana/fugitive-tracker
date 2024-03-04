@@ -103,7 +103,7 @@ Route::middleware('is_officer')->group(function (){
 
 //Password change admin and officers
 
-Route::middleware('is_officer')->group(function () {
+Route::middleware('is_admin_officer')->group(function () {
     Route::get('/change-password', [PasswordController::class, 'index'])->name('change-password');
     Route::post('/new-password', [PasswordController::class, 'changePassword'])->name('new.password');
 });
