@@ -6,7 +6,7 @@
 <head>
     {{--meta--}}
     @include('admin.includes.meta')
-    <title>Admin Dashboard | Fugitive Tracker</title>
+    <title> @yield('title') Fugitive Tracker</title>
 
     {{--css--}}
     @include('admin.includes.style')
