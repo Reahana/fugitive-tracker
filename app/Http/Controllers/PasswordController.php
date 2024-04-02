@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class PasswordController extends Controller
 {
+    private $officers;
     public function index()
     {
         if(Auth::user()->role_id===1) {
@@ -16,10 +17,10 @@ class PasswordController extends Controller
 
             return view('front.officer.password.changePassword', [
                 'officers' => Officer::where('p_id', Auth::user()->p_id)->select('*')->get()
-            ]);
+            ])->with('message', 'Password Change Successfully');
         }
         else{
-            return view('admin.password.changePassword');
+            return view('admin.password.changePassword')->with('message', 'Password Change Successfully');
         }
 
 

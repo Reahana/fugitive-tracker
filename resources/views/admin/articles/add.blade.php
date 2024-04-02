@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <h4 class="header-title">Add Article form</h4>
                     <p class="text-muted font-14">{{Session::get('message')}}</p>
-                    <form class="form-horizontal" action="{{route('area.new')}}" method="POST" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="{{route('article.new')}}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row mb-3">
