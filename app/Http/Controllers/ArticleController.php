@@ -20,12 +20,12 @@ class ArticleController extends Controller
 
     public function manage ()
     {
-        return view('admin.articles.manage',['areas' => Area::orderBy('id')->get()]);
+        return view('admin.articles.manage',['articles' => Article::orderBy('id')->get()]);
     }
 
     public function edit($id)
     {
-        return view('admin.articles.edit',['area' => Area::find($id) ]);
+        return view('admin.articles.edit',['article' => Article::find($id) ]);
     }
     public function update(Request $request, $id)
     {

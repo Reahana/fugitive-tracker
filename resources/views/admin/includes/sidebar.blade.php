@@ -176,7 +176,7 @@
                             <a href="{{route('add-article')}}">Add Article</a>
                         </li>
                         <li>
-                            <a href="apps-tasks-details.html">Manage Article</a>
+                            <a href="{{route('manage-article')}}">Manage Article</a>
                         </li>
                     </ul>
                 </div>

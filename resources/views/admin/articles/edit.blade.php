@@ -34,13 +34,14 @@
                         <div class="row mb-3">
                             <label for="inputEmail3" class="col-3 col-form-label">Article Body</label>
                             <div class="col-9">
-                                <textarea name="body" placeholder=" Body" id="" cols="95" rows="5"></textarea>
+                                <textarea name="body" placeholder=" Body" id="" cols="95" rows="5">{{$article->body}}</textarea>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputEmail34" class="col-3 col-form-label"> Image</label>
                             <div class="col-9">
-                                <input type="file" class="form-control" name="image" id="inputEmail34" placeholder="Article Image"/>
+                                <input type="file" class="form-control" name="image" id="inputEmail34" placeholder=" Image"/>
+                                <img src="{{asset($article->image)}}" alt="" height="100" width="120"/>
                             </div>
                         </div>
 
