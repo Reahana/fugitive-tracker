@@ -40,47 +40,45 @@
 
 <!--Articles -->
 <section class="article container-fluid py-3 ">
-    <h2 class="title pb-3">Articles <i class="fa-regular fa-newspaper"></i></h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <h2 class="title mb-3">Articles <i class="fa-regular fa-newspaper"></i></h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4 section1 pb-3">
         <div class="col">
-            <div class="card h-100">
-                <img src="./image/law.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+            <div class="card text-bg-light">
+                <img src="./image/law.jpg" class="card-img" style="opacity: 0.5" alt="...">
+                <div class="card-img-overlay">
+                    <h5 class="card-title ">Card title</h5>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                    <button>Read more..</button>
                 </div>
-
             </div>
         </div>
         <div class="col">
-            <div class="card h-100">
-                <img src="./image/law.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            <div class="card text-bg-light">
+                <img src="./image/law.jpg" class="card-img" style="opacity: 0.5" alt="...">
+                <div class="card-img-overlay">
+                    <h5 class="card-title ">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small>Last updated 3 mins ago</small></p>
                 </div>
-                <!-- <div class="card-footer">
-                  <small class="text-body-secondary">Last updated 3 mins ago</small>
-                </div> -->
             </div>
         </div>
         <div class="col">
-            <div class="card h-100">
-                <img src="./image/law.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            <div class="card text-bg-light">
+                <img src="./image/law.jpg" class="card-img" style="opacity: 0.5" alt="...">
+                <div class="card-img-overlay">
+                    <h5 class="card-title ">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small>Last updated 3 mins ago</small></p>
                 </div>
-                <!-- <div class="card-footer">
-                  <small class="text-body-secondary">Last updated 3 mins ago</small>
-                </div> -->
             </div>
         </div>
     </div>
 
-    <div class="d-flex  justify-content-center mt-3 ">
-        <button class="btn btn-outline-light btn-lg"> Read all blogs </button>
-    </div>
+
+    {{--<div class="d-flex  justify-content-center mt-3 ">--}}
+        {{--<button class="btn btn-outline-light btn-lg"> Read all blogs </button>--}}
+    {{--</div>--}}
 
 </section>
     @endsection

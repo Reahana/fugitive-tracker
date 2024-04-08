@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -13,7 +14,7 @@ class ArticleController extends Controller
 
     public function  create(Request $request)
     {
-        Area::newArea($request);
+        Article::newArticle($request);
         return redirect()->back()->with('message', 'articles added successfully');
     }
 
@@ -28,13 +29,12 @@ class ArticleController extends Controller
     }
     public function update(Request $request, $id)
     {
-        Area::updateArea($request,$id);
+        Article::updateArticle($request,$id);
 
-        return redirect('/manage-article')->with('message', 'Area info update successfully');
-    }
+        return redirect('/manage-article')->with('message', 'Area info update successfully');}
     public function delete( $id)
     {
-        Area::deleteArea($id);
+        Article::deleteArticle($id);
 
         return redirect('/manage-article')->with('message', 'Area  delete successfully');
     }

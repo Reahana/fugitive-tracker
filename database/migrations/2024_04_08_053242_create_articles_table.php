@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
+            $table->integer('article_no')->unique();
+            $table->string('author_name');
+            $table->string('title');
+            $table->text('body');
+            $table->text('image');
             $table->timestamps();
         });
     }
