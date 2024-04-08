@@ -10,25 +10,25 @@
                 <div class="card-body">
                     <h4 class="header-title">Add Article form</h4>
                     <p class="text-muted font-14">{{Session::get('message')}}</p>
-                    <form class="form-horizontal" action="{{route('area.new')}}" method="POST" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="{{route('article.update', ['id' => $article->id])}}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row mb-3">
                             <label for="inputEmail31" class="col-3 col-form-label">Article No</label>
                             <div class="col-9">
-                                <input type="number" class="form-control" name="article_no" id="article_no" placeholder="Article no"/>
+                                <input type="number" class="form-control" name="article_no" value="{{$article->article_no}}" id="article_no" placeholder="Article no"/>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputEmail3" class="col-3 col-form-label">Author Name</label>
                             <div class="col-9">
-                                <input type="text" class="form-control" name="author_name" id="author_name" placeholder=" Author"/>
+                                <input type="text" class="form-control" name="author_name" value="{{$article->author_name}}" id="author_name" placeholder=" Author"/>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputEmail3" class="col-3 col-form-label">Article Title</label>
                             <div class="col-9">
-                                <input type="text" class="form-control" name="title" id="title" placeholder=" Title"/>
+                                <input type="text" class="form-control" name="title" value="{{$article->title}}" id="title" placeholder=" Title"/>
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -51,7 +51,7 @@
 
                         <div class="justify-content-end row">
                             <div class="col-9">
-                                <button type="submit" class="btn btn-info">Add New Article</button>
+                                <button type="submit" class="btn btn-info">Update Article</button>
                             </div>
                         </div>
                     </form>

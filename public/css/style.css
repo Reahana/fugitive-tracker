@@ -92,11 +92,16 @@ font-size: 50px;
 min-height: 78vh; }
 .article .title{
   text-align: center;
-  color: #FF5651 ;
+
+  color:#ffffff;
   font-size: 40px;
   padding: 10px 0 20px 0;
   }
-
+.article a {
+  text-decoration: none;
+  color : #ffffff;
+  padding:  5px;
+}
 
 /* ==== check page =====  */
   .law-list{
