@@ -102,6 +102,10 @@ min-height: 78vh; }
   color : #ffffff;
   padding:  5px;
 }
+.show{
+  text-align: justify;
+  background-color:#fffef4 ;
+}
 
 /* ==== check page =====  */
   .law-list{

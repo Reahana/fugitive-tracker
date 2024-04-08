@@ -48,7 +48,7 @@
                     <img src="{{$article->image}}" class="card-img" height="300" alt="...">
                     <div class="card-img-overlay">
                         <br><br><br>
-                        <h3 class="card-title text-white bg-danger"><a href="">{{$article->title}}</a></h3>
+                        <h3 class="card-title text-white bg-danger"><a href="{{route('show', ['id' => $article->id])}}">{{$article->title}}</a></h3>
 
                     </div>
                 </div>

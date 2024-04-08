@@ -39,4 +39,9 @@ class ArticleController extends Controller
 
         return redirect('/manage-article')->with('message', 'Area  delete successfully');
     }
+
+    public function show($id)
+    {
+        return view ('front.article.show',['article' => Article::find($id) ]);
+    }
 }

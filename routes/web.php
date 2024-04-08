@@ -66,6 +66,8 @@ Route::get('/check-status',[CheckStatusController::class, 'index'])->name('check
 
 Route::get('/search',[CheckStatusController::class, 'search'])->name('search');
 
+// ====== Article =====//
+Route::get('/show-article/{id}',[ArticleController::class,'show'])->name('show');
 
 
 //======= Officer section ===== ///
