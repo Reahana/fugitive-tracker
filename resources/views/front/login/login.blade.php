@@ -171,7 +171,7 @@
 
 
 </form>
-<div class="message">
+<div>
     @if($message = Session::get('message'))
         <div class="alert alert-danger alert-dismissible fade show " role="alert">
             <strong>{{$message}}!</strong>
