@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./image/favicon.ico" type="image/x-icon">
-
+    <link rel="stylesheet" href="{{asset('/')}}css/bootstrap.min.css">
 
     <!--Stylesheet-->
     <style media="screen">
@@ -129,6 +129,7 @@
             background-color: rgba(255,255,255,0.27);
             color: #eaf0fb;
             text-align: center;
+            margin-bottom: 10px;
         }
         .social button:hover{
             background-color: rgba(255,255,255,0.47);
@@ -140,6 +141,7 @@
         .social a{
             text-decoration: none;
         }
+
 
     </style>
 </head>
@@ -164,8 +166,19 @@
     <div class="social">
         <button class="go"><a href={{route('/')}}><i class="fa-solid fa-arrow-left"></i>Back</a> </button>
         <!-- <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>  -->
+
     </div>
+
+
 </form>
+<div class="message">
+    @if($message = Session::get('message'))
+        <div class="alert alert-danger alert-dismissible fade show " role="alert">
+            <strong>{{$message}}!</strong>
+        </div>
+    @endif
+</div>
+
 <script src="https://kit.fontawesome.com/dd288c4724.js" crossorigin="anonymous"></script>
 </body>
 </html>
