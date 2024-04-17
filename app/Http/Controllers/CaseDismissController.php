@@ -16,7 +16,14 @@ class CaseDismissController extends Controller
     private $req, $cases, $officer;
     public function index($id)
     {
-        return view('front.officer.dismiss-case.form', ['case' => CaseFile::find($id), 'citizens' => Citizen::all(), 'laws' => Law::all()]);
+        $this->officer = Officer::where('p_id',Auth::user()->p_id)->get('*');
+        return view('front.officer.dismiss-case.form', [
+            'case' => CaseFile::find($id),
+            'citizens' => Citizen::all(),
+            'laws' => Law::all(),
+           'officers'=> $this->officer
+        ]);
+
 
     }
 

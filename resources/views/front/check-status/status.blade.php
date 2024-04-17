@@ -23,8 +23,7 @@
                     <th>SL No</th>
                     <th>Case Clause</th>
                     <th>Case Title</th>
-                    <th>How to solve</th>
-                    <th>Apply</th>
+                    
                 </tr>
                 </thead>
                 <tbody class="text-center">
@@ -33,8 +32,7 @@
                         <td>{{$loop->iteration}}</td>
                         <td>{{$case->clause}}</td>
                         <td>{{$case->title}}</td>
-                        <td></td>
-                        <td></td>
+                        
                     </tr>
                 @endforeach
                 </tbody>

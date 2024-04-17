@@ -1,6 +1,6 @@
 @extends('front.officer.master')
 @section('title')
-    Edit new Case |
+    Case Dismiss |
 @endsection
 @section('body')
     <div class="row">
