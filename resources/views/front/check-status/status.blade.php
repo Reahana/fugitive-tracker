@@ -10,29 +10,31 @@
 
         @if($cases->isNotEmpty())
         @foreach ($nids as $nid)
-            <div class=" m-4">
-                <h4>Name: {{$nid->name}}</h4>
-                <h5>NID: {{$nid->nid}} </h5>
+            <div class=" m-4 text-center">
+                <h3 >Name: {{$nid->name}}</h3>
+                <h4 >NID: {{$nid->nid}} </h4>
             </div>
 
         @endforeach
 
-            <table class="table table-striped table-bordered table-hover" id="example-table" cellspacing="0" width="100%">
+            <table class="table   table-bordered table-hover" id="example-table" cellspacing="0" width="100%">
                 <thead class="text-center fs-5">
                 <tr>
                     <th>SL No</th>
                     <th>Case Clause</th>
                     <th>Case Title</th>
+                    <th>Action</th>
                     
                 </tr>
                 </thead>
                 <tbody class="text-center">
                 @foreach($cases as $case)
                     <tr>
-                        <td>{{$loop->iteration}}</td>
-                        <td>{{$case->clause}}</td>
+                        <th>{{$loop->iteration}}</th>
+                        <td >{{$case->clause}}</td>
                         <td>{{$case->title}}</td>
-                        
+                        <td><a href="{{'how-to-solve'}}">Solution</a></td>
+
                     </tr>
                 @endforeach
                 </tbody>
@@ -47,14 +49,14 @@
                 <h1 class="text-danger text-center m-5">NID not found</h1>
             @else
             @foreach ($nids as $nid)
-                <div class=" m-4">
-                    <h4>Name: {{$nid->name}}</h4>
-                    <h5>NID: {{$nid->nid}} </h5>
+                <div class=" m-4 text-center">
+                    <h3 >Name: {{$nid->name}}</h3>
+                    <h4 >NID: {{$nid->nid}} </h4>
                 </div>
 
             @endforeach
 
-            <div class="m-5">
+            <div class="m-5 text-center">
                 <h2> <span class="text-success">Congratulations!</span> You dont have any case </h2>
             </div>
 
