@@ -9,7 +9,7 @@
             <thead class="text-center fs-4">
             <tr>
                 <th scope="col">Sl no.</th>
-                {{--<th scope="col">Clause</th>--}}
+                <th scope="col">Clause</th>
                 <th scope="col">Title</th>
                 <th scope="col">Fine</th>
             </tr>
@@ -18,7 +18,7 @@
             @foreach($laws as $law)
                 <tr>
                     <th>{{$loop->iteration}}</th>
-                    {{--<td>{{$law->clause}}</td>--}}
+                    <td>{{$law->clause}}</td>
                     <td>{{$law->title}}</td>
                     <td>{{$law->fine}} Taka</td>
                 </tr>
