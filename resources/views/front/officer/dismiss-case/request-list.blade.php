@@ -38,8 +38,9 @@
                         </thead>
                         <tbody>
                         @foreach($cases as $case)
+
                             <tr>
-                                <td>{{$loop->iteration}}</td>
+                                <td>{{$loop->iteration}}  </td>
                                 <td>{{$case->p_id}}</td>
                                 <td>{{$case->c_id}}</td>
                                 <td>{{$case->nid}}</td>

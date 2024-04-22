@@ -36,6 +36,7 @@ class CaseDismissController extends Controller
     public function requestList()
     {$this->officer = Officer::where('p_id',Auth::user()->p_id)->get('*');
         $this->req = CaseFile::join('dismisses', 'dismisses.c_id', '=','case_files.c_id')
+            ->where('case_files.p_id','=', auth()->user()->p_id)
         ->get('*');
 
         return view('front.officer.dismiss-case.request-list',['cases' => $this->req, 'officers'=>$this->officer]);
