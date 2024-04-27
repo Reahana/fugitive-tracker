@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AllCase;
 use App\Models\CaseFile;
 use App\Models\Citizen;
 use App\Models\Law;
@@ -40,6 +41,7 @@ class CaseFileController extends Controller
 
     public function  create(Request $request)
     {
+        AllCase::newAllCase($request);
         CaseFile::newCaseFile($request);
         return redirect()->back()->with('message', 'Case Filed successfully');
     }

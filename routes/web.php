@@ -160,6 +160,9 @@ Route::middleware([ 'auth:sanctum',  config('jetstream.auth_session'), 'verified
     Route::post('/update-law/{id}', [LawListController::class, 'update'])->name('law.update');
     Route::post('/delete-law/{id}', [LawListController::class, 'delete'])->name('law.delete');
 
+    //====== All Case
+    Route::get('/all-cases',[\App\Http\Controllers\AllCaseController::class,'index'])->name('all-case');
+
 //======== Dismiss/Delete Case
     Route::get('/dismiss-list',[CaseDismissController::class, 'viewDismissList'])->name('dismiss-list');
     Route::post('/delete-case/{id}', [CaseFileController::class, 'delete'])->name('case.delete');

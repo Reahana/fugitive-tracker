@@ -130,7 +130,12 @@
                 </div>
             </li>
 
-
+            <li class="side-nav-item">
+                <a href="{{route('all-case')}}" class="side-nav-link">
+                    <i class="fa-solid fa-handcuffs"></i>
+                    <span> All Cases  </span>
+                </a>
+            </li>
 
             <li class="side-nav-item">
                 <a href="{{route('dismiss-list')}}" class="side-nav-link">
