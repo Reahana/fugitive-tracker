@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2024 at 05:13 AM
+-- Generation Time: Apr 28, 2024 at 09:32 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,36 @@ SET time_zone = "+00:00";
 --
 -- Database: `fugitive_tracker`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `all_cases`
+--
+
+CREATE TABLE `all_cases` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `p_id` int(11) NOT NULL,
+  `c_id` int(11) NOT NULL,
+  `nid` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `contact` int(11) DEFAULT NULL,
+  `clause` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `area` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `all_cases`
+--
+
+INSERT INTO `all_cases` (`id`, `p_id`, `c_id`, `nid`, `name`, `contact`, `clause`, `title`, `area`, `created_at`, `updated_at`) VALUES
+(1, 10001, 101, 12345678, 'AB Khan', 1716666160, '150', 'black smoke from the vehicle', 'Farmgate', '2024-04-26 12:06:03', '2024-04-28 01:02:16'),
+(2, 10001, 102, 420188000, 'Rani', NULL, '157', 'In case of obstruction of road or public place', 'Farmgate', '2024-04-26 12:06:42', '2024-04-26 12:06:42'),
+(3, 10002, 201, 123987456, 'Ms Mina', NULL, '158', 'If you use someone else\'s car without permission', 'Bosila', '2024-04-27 09:00:09', '2024-04-27 09:00:09'),
+(4, 10002, 202, 12345678, 'AB Khan', NULL, '139', 'using Hydrolic horn', 'Bosila', '2024-04-27 09:03:05', '2024-04-27 09:03:05');
 
 -- --------------------------------------------------------
 
@@ -95,10 +125,9 @@ CREATE TABLE `case_files` (
 --
 
 INSERT INTO `case_files` (`id`, `p_id`, `c_id`, `nid`, `name`, `contact`, `clause`, `title`, `area`, `created_at`, `updated_at`) VALUES
-(2, 10001, 102, 450123123, 'Karim Rahman', 166325999, '137', 'General fine', 'Farmgate', '2024-02-28 07:05:13', '2024-02-28 07:05:13'),
-(6, 10001, 103, 12345678, 'AB Khan', 123659898, '149', 'Riding a bike without safety', 'Farmgate', '2024-04-10 07:26:53', '2024-04-10 07:26:53'),
-(7, 10001, 104, 123987456, 'Ms Mina', NULL, '156', 'If you drive without permission', 'Farmgate', '2024-04-10 07:48:25', '2024-04-10 07:48:25'),
-(8, 10002, 201, 12345678, 'AB Khan', NULL, '149', 'Riding a bike without safety', 'Bosila', '2024-04-21 11:39:00', '2024-04-21 11:39:00');
+(1, 10001, 101, 12345678, 'AB Khan', 1716666160, '150', 'black smoke from the vehicle', 'Farmgate', '2024-04-26 12:06:03', '2024-04-28 01:02:16'),
+(3, 10002, 201, 123987456, 'Ms Mina', NULL, '158', 'If you use someone else\'s car without permission', 'Bosila', '2024-04-27 09:00:09', '2024-04-27 09:00:09'),
+(4, 10002, 202, 12345678, 'AB Khan', NULL, '139', 'using Hydrolic horn', 'Bosila', '2024-04-27 09:03:06', '2024-04-27 09:03:06');
 
 -- --------------------------------------------------------
 
@@ -147,8 +176,7 @@ CREATE TABLE `dismisses` (
 --
 
 INSERT INTO `dismisses` (`id`, `p_id`, `c_id`, `comment`, `created_at`, `updated_at`) VALUES
-(1, 10001, 101, 'Fine already paid.', '2024-02-27 23:37:15', '2024-02-27 23:37:15'),
-(3, 10001, 103, 'Fine paid', '2024-02-28 11:34:22', '2024-02-28 11:34:22');
+(1, 10001, 102, 'fine paid', '2024-04-26 12:08:49', '2024-04-26 12:08:49');
 
 -- --------------------------------------------------------
 
@@ -254,7 +282,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (26, '2024_02_28_045425_create_case_files_table', 16),
 (27, '2024_03_04_174205_create_articles_table', 17),
 (28, '2024_04_08_052459_create_articles_table', 18),
-(29, '2024_04_08_053242_create_articles_table', 19);
+(29, '2024_04_08_053242_create_articles_table', 19),
+(30, '2024_04_26_174143_create_all_cases_table', 20),
+(31, '2024_04_26_180147_create_all_cases_table', 21),
+(32, '2024_04_26_180252_create_case_files_table', 21),
+(33, '2024_04_26_180329_create_dismisses_table', 21);
 
 -- --------------------------------------------------------
 
@@ -335,8 +367,9 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('fFr2TqmsUQNZAo9iTDOFwkyuHA8f2fAn4Yxhus7J', 3, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiRDdGNm11bW40MktIR2tmNkRnczcxZE9lR0hwMlZhbmRQNlNLbDdzYyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Njg6Imh0dHA6Ly9sb2NhbGhvc3QvbXlfbXNjX3Byb2plY3QvZnVnaXRpdmUtdHJhY2tlci9wdWJsaWMvcmVxdWVzdC1saXN0Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mzt9', 1713721159),
-('GsrQMX6VNkPxiqXGuV4NDbG9OQRWErTnlwUhkVKW', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSlB2N2w1cWszUFJXQjgxREVpamtjdllOVjNQSVBXbW5FSHRyNjhJaSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NTU6Imh0dHA6Ly9sb2NhbGhvc3QvbXlfbXNjX3Byb2plY3QvZnVnaXRpdmUtdHJhY2tlci9wdWJsaWMiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1713755583);
+('cyirL6Gy6KAh0ss7EuyJKgRbkf6UVofSv19eFiWe', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiOHowblN3ZEtJOTN0QXdxWVRkemRnb2hLN2NwUEpQUkFmY0lJV2lDUiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NTU6Imh0dHA6Ly9sb2NhbGhvc3QvbXlfbXNjX3Byb2plY3QvZnVnaXRpdmUtdHJhY2tlci9wdWJsaWMiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1714286184),
+('OowvmYfERCpMWaFSSJOW592SSfsdyLPvhyuxwmKS', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVjQ2YTh0OUk0TXpqWWtqSUtib1NuU3p0anNJWnFtWjNzb01HeXVjMyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NTU6Imh0dHA6Ly9sb2NhbGhvc3QvbXlfbXNjX3Byb2plY3QvZnVnaXRpdmUtdHJhY2tlci9wdWJsaWMiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1714286184),
+('ZvHcBugt4zigJn4Jv5L0TrXC6iZgzcEYWsaqjkaa', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMTFtNzNTamhTZ1BBR2VIQk5xd2xGUXBRNjZreEFXb3NaSjBhNUg0WiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NTU6Imh0dHA6Ly9sb2NhbGhvc3QvbXlfbXNjX3Byb2plY3QvZnVnaXRpdmUtdHJhY2tlci9wdWJsaWMiO319', 1714289425);
 
 -- --------------------------------------------------------
 
@@ -366,12 +399,18 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role_id`, `p_id`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
 (1, 'Amanda Reahana Gomes', 'reahana233@gmail.com', NULL, '$2y$10$FsaVsKc2z5zRxNLbLv7XUOBSyuappPZvEZLRHf3idlSkfCPUP3RWW', 0, NULL, NULL, NULL, NULL, '2024-02-27 07:21:06', '2024-04-01 23:30:00'),
 (2, 'James Brown', 'officer1@gmail.com', NULL, '$2y$10$CW6DwSRUcTOz4lJhu.5obeyfYr4kuLvIvWERX9HqmEEHMhXz88F36', 1, 10001, NULL, NULL, NULL, '2024-02-27 07:27:08', '2024-04-01 23:27:40'),
-(3, 'Mr. Smith', 'officer2@gmail.com', NULL, '$2y$10$HzDXgSu53xgUZKTMDRQ41.gQtQ/c3s9seVk5/e2vViK1ovVH/YPhW', 1, 10002, NULL, NULL, NULL, '2024-03-01 09:02:52', '2024-03-01 09:02:52'),
-(4, 'Admin', 'admin@admin.com', NULL, '$2y$10$dIfBaFfKnP4WoqtupHALteUqiHcXipUCN5KTHOcmNu9lzRnZCuoHO', 0, NULL, NULL, NULL, NULL, '2024-04-10 00:27:57', '2024-04-10 00:27:57');
+(3, 'Mr. Smith', 'officer2@gmail.com', NULL, '$2y$10$HzDXgSu53xgUZKTMDRQ41.gQtQ/c3s9seVk5/e2vViK1ovVH/YPhW', 1, 10002, NULL, NULL, NULL, '2024-03-01 09:02:52', '2024-03-01 09:02:52');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `all_cases`
+--
+ALTER TABLE `all_cases`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `all_cases_c_id_unique` (`c_id`);
 
 --
 -- Indexes for table `areas`
@@ -471,6 +510,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `all_cases`
+--
+ALTER TABLE `all_cases`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `areas`
 --
 ALTER TABLE `areas`
@@ -486,7 +531,7 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT for table `case_files`
 --
 ALTER TABLE `case_files`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `citizens`
@@ -498,7 +543,7 @@ ALTER TABLE `citizens`
 -- AUTO_INCREMENT for table `dismisses`
 --
 ALTER TABLE `dismisses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -516,7 +561,7 @@ ALTER TABLE `laws`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `officers`

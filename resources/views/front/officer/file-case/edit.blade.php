@@ -37,8 +37,8 @@
                                 <input class="form-control"  type="number" value="{{$case->c_id}}" name="c_id" placeholder=" Case ID"/>
 
                             </div>
-
-                        <div class="form-group row"></div>
+                        </div>
+                        <div class="form-group row">
                             <label class="col-sm-2 col-form-label"> NID</label>
                             <div class="col-sm-10">
                                 <select class="form-control" name="nid" id="nid">

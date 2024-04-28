@@ -9,6 +9,7 @@ class AllCaseController extends Controller
 {
     public function index()
     {
+        
         return view('admin.all-cases.show',['allcase' => AllCase::orderBy('id')->get()]);
     }
 }

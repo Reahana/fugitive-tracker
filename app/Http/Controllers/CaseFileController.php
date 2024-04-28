@@ -67,7 +67,7 @@ class CaseFileController extends Controller
     public function update(Request $request, $id)
     {
         CaseFile::updateCaseFile($request,$id);
-
+        AllCase:: updateAllCase($request,$id);
         return redirect('/manage-case')->with('message', 'Case info update successfully');
     }
     public function delete( $id)

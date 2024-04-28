@@ -40,7 +40,7 @@ class CaseFile extends Model
         self::$caseFile->contact  = $request->contact;
         self::$caseFile->clause       = $request->clause;
         self::$caseFile->title  = $request->title;
-        self::$caseFile->area  = $request->area;
+        //self::$caseFile->area  = $request->area;
         self::$caseFile->save();
 
 

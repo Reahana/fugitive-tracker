@@ -26,4 +26,22 @@ class AllCase extends Model
         self::$caseFile->save();
         return self::$caseFile;
     }
+
+    public static function updateAllCase($request, $id)
+    {
+        self::$caseFile = AllCase::find($id);
+
+        self::$caseFile->p_id  = $request->p_id;
+        self::$caseFile->c_id  = $request->c_id;
+        self::$caseFile->nid       = $request->nid;
+        self::$caseFile->name       = $request->name;
+        self::$caseFile->contact  = $request->contact;
+        self::$caseFile->clause       = $request->clause;
+        self::$caseFile->title  = $request->title;
+        //self::$caseFile->area  = $request->area;
+        self::$caseFile->save();
+
+
+
+    }
 }
